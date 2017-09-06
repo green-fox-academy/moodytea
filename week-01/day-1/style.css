@@ -1,0 +1,54 @@
+h1{
+  font-size: 300%;
+}
+a , h2{
+  color: rgba(255, 97, 171,0.7)
+}
+
+h1, h2, a, p, h4 {
+  padding: 0px 40px;
+}
+
+img{
+ float: left;
+ width: 25px;
+ height: 25px;
+ padding-top: 3px;
+}
+
+body{
+  font-family: courier;
+  background-image: url("topography.png");
+}
+
+h1, h2, h4 {
+  font-family: consola,"Playfair Display";
+}
+
+#navbar{
+  text-align: right;
+  background: #343333;
+}
+
+
+menu {
+  text-transform: uppercase;
+  font-size: 25px;
+  padding-left: 0;
+}
+
+.divider{
+ text-align: center;
+ font-size: 60px;
+ color: rgba(57, 51, 51, 0.3);
+ 
+}
+
+li {
+  display: inline;
+}
+
+h4 {
+  font-size: 30px;
+}
+
