@@ -1,0 +1,18 @@
+p {
+    font-size: 18px;
+    margin: 0px 0px;
+    width: 345px;
+    display: block;
+    border: 2px solid black;
+    border-top: none;
+    padding: 20px;
+    
+     }
+
+p:last-of-type{
+    border-bottom: none;
+}
+
+p:hover { 
+    background-color: #EC6842;
+}
