@@ -1,0 +1,14 @@
+ 
+h1 {
+    color: rgb(255, 199, 0);
+    font-weight: lighter;
+    font-size: 27px;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+div p:nth-child(3){
+    font-family: Courier, monospace
+}
