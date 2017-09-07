@@ -1,0 +1,37 @@
+p{
+    display: block;
+    border-width: 1px;
+    border-style:solid;
+    border-color: #347BFB;    
+    width: 249px;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color:white;
+    text-align: center;
+    padding: 47px 55px;
+}
+div p:nth-child(1){
+  background-color:#F76870 ; 
+  border-width: 15px 15px 0px 15px;
+  margin: 15px 15px 0px 15px;
+}
+
+div p:nth-child(2){
+  background-color: #F76870 ; 
+  border-width: 0px 15px 15px 15px;
+  margin: 0px 15px 5px 15px;
+}
+
+div p:nth-child(3){
+  background-color:#96EAE8 ;
+  border-width: 15px 15px 0px 15px;
+  margin: 0px 15px 0px 15px;
+}
+
+div p:nth-child(4){
+  background-color: #96EAE8;
+  border-width: 0px 15px 15px 15px;
+  margin: 0px 15px 15px 15px
+}
+   
