@@ -1,0 +1,29 @@
+div {
+    max-width: 350px;
+    display: inline-block;
+    font-size: 32px;
+    
+    font-family: sans-serif;
+    text-align: center;
+    margin: 5px 5px;
+    color: #FFFFFF;
+	width: 30px;
+    height: 30px;
+    padding: 50px 50px;
+    border-radius: 50%;
+	background: #0CEBDE;
+}
+
+body :last-child{
+    background: #EBBE0C;
+}
+body :first-child{
+    background: #B90CEB;
+}
+
+body{
+    margin-left: 20px;
+}
+*{
+    max-width: 520px;
+}
