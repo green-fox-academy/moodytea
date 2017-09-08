@@ -1,0 +1,49 @@
+*{
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+}
+
+
+body {
+  width: 820px;
+  
+  }
+
+div {
+  background:#DDD6CC;
+}
+
+
+
+.button {
+  font-size: 24px;
+  border: none;
+  background: #958A97;
+  height: 40px;
+  width: 300px;
+  border-radius: 3px;
+}
+
+.full, .half, .quarter{
+  display: inline-block;
+  padding: 15px;
+  float: left;
+}
+
+.half {
+  width: 380px;
+}
+
+.full{
+  width: 790px;
+}
+
+.quarter{
+    width: 160px;
+}
+
+#save {
+  text-transform: uppercase;
+  text-align: center;
+}
