@@ -1,4 +1,5 @@
 *{
+  
   font-family: sans-serif;
   color: white;
   margin: 0;
@@ -6,12 +7,12 @@
 
 
 body {
-  width: 820px;
+  width: 822px;
   
   }
 
 div {
-  background:#DDD6CC;
+  
 }
 
 
@@ -25,10 +26,15 @@ div {
   border-radius: 3px;
 }
 
+.empty {
+  background: white;
+  border: 1px solid black;
+  width: -2px;
+}
+
 .full, .half, .quarter{
   display: inline-block;
-  padding: 15px;
-  float: left;
+  
 }
 
 .half {
@@ -46,4 +52,10 @@ div {
 #save {
   text-transform: uppercase;
   text-align: center;
+}
+
+[id] {
+  background:#DDD6CC;
+  padding: 15px;
+  float: left;
 }
