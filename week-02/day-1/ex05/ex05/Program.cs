@@ -6,7 +6,17 @@ namespace ex05
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int a = 22;
+            int b = 13;
+
+            Console.WriteLine(a + b);
+            Console.WriteLine(a - b);
+            Console.WriteLine(a * b);
+            double c = a % b* 1.0 / b;
+            Console.WriteLine(a / b + c);
+            Console.WriteLine(a / b);
+            Console.WriteLine(a % b);
+            Console.ReadLine(); 
         }
     }
 }
