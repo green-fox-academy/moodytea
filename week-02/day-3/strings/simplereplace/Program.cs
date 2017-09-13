@@ -8,7 +8,7 @@ namespace simplereplace
         {
 			string example = "In a dishwasher far far away";
 
-			example.replace("dishwasher", "galaxy");
+            example = example.Replace("dishwasher", "galaxy");
 
 			// I would like to replace "dishwasher" with "galaxy" in this example, but it has a problem.
 			// Please fix it for me!
