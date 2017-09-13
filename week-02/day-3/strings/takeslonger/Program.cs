@@ -12,7 +12,8 @@ namespace takeslonger
 			// Add "always takes longer than" to the StringBuilder (quote) between the words "It" and "you"
 			// Using pieces of the quote variable (instead of just redefining the string)
 
-			Console.WriteLine(quote);
+
+			Console.WriteLine(quote.Insert(19, "always takes longer than"));
         }
     }
 }
