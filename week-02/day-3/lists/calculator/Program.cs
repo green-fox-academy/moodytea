@@ -21,6 +21,37 @@ namespace calculator
 			// Waits for the user input
 			// Print the result to the prompt
 			// Exit
+            Console.WriteLine("Please type in the expression:");
+
+            string operation = Console.ReadLine();
+            string num1 = Console.ReadLine();
+            string num2 = Console.ReadLine();
+
+            double num11 = Convert.ToInt64(num1);
+            double num22 = Convert.ToInt64(num2);
+
+            if (operation.Equals("/"))
+			{
+                Console.WriteLine(num11/num22);
+            }
+			else if (operation.Equals("*"))
+			{
+				Console.WriteLine(num11 * num22);
+			}
+			else if (operation.Equals("-"))
+			{
+				Console.WriteLine(num11 - num22);
+			}
+			else if (operation.Equals("+"))
+			{
+				Console.WriteLine(num11 + num22);
+			}
+			else if (operation.Equals("%"))
+			{
+				Console.WriteLine(num11 % num22);
+			}
+
+            Console.Read();
 		}
     }
 }
