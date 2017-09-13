@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace isinlist
 {
@@ -11,6 +12,10 @@ namespace isinlist
 			// Check if list contains all of the following elements: 4,8,12,16
 			// Print "true" if it contains all, otherwise print "false"
 			// Can you do both the different approaches you tried in the previous one?
-		}
+
+			if (list.Contains(4)&&list.Contains(8)&& list.Contains(12)&& list.Contains(16))
+                   Console.WriteLine("true");
+
+        }
     }
 }
