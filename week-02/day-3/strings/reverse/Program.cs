@@ -4,7 +4,8 @@ namespace reverse
 {
     class Program
     {
-        public static  Main(string[] args)
+
+        static void Main(string[] args)
         {
 			string reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
 
@@ -13,9 +14,15 @@ namespace reverse
             // Try to solve this using ElementAt() first, and optionally anything else after.
 
             int counter = reversed.Length;
+            string now;
+
+            for (int i = counter-1; i >=0; i-- ){
+                Console.WriteLine(Convert.ToString(reversed[i]));
+            }
 
 
-            Console.WriteLine(reversed);
+
+
           
         }
     }
