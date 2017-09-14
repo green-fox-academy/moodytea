@@ -21,13 +21,16 @@ namespace drawtriangle
             int num = int.Parse(Console.ReadLine());
 
 			int i, j;
-            for (i = 1; i <= num; i++)
+            for (i = 1; i <=num ; i++)
 			{
+                
+
                 for (j = 1; j <= i; j++)
-				{
-					Console.Write("*");
-				}
-				Console.WriteLine("");
+    		    {
+                    Console.Write("*");
+    			}
+    			Console.WriteLine("");
+			  
 			}
 			
             Console.ReadLine();
