@@ -21,13 +21,14 @@ namespace pyramid
 			int num = int.Parse(Console.ReadLine());
 
 			int i, j, k;
-			for (i = 1; i <= num; i++)
+            for (i = 1; i <= num; i++)
 			{
-				for (j = 1; j <= num - i; j++)
-				{
-					Console.Write(" ");
-				}
-				for (k = 1; k <= i; k++)
+                for (j = 1; j <= num - i; j++)
+                {
+                    Console.Write(" ");
+                }
+ 
+                for (k = 1; k < i * 2; k = k + 1)
 				{
 					Console.Write("*");
 				}
