@@ -28,7 +28,7 @@ namespace pyramid
                     Console.Write(" ");
                 }
  
-                for (k = 1; k < i * 2; k = k + 1)
+                for (k = 1; k < i * 2; k ++)
 				{
 					Console.Write("*");
 				}
