@@ -14,10 +14,9 @@ namespace reverse
             // Try to solve this using ElementAt() first, and optionally anything else after.
 
             int counter = reversed.Length;
-            string now;
 
             for (int i = counter-1; i >=0; i-- ){
-                Console.WriteLine(Convert.ToString(reversed[i]));
+                Console.Write(Convert.ToString(reversed[i]));
             }
 
 
