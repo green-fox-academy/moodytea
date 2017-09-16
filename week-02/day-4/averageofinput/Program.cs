@@ -27,7 +27,7 @@ namespace averageofinput
                 sum = sum + element[i];
             }
 
-            double av = sum / i;
+            double av = Math.Round(sum / i, 2) ;
             Console.WriteLine("sum:" + sum + " average:" + av);
             Console.ReadLine();
         }
