@@ -16,9 +16,22 @@ namespace matrix
             //
             // - Print this two dimensional array to the output
 
-            string[] m1 = { "x", "x","x","x" };
-            for (int i = 0; i < 4; i++)
-                Console.WriteLine(m1 + "/n");
+            int[ , ] myArray = new int[4, 4];
+            for (int i = 0; i <= 3; i++)
+            {
+                for (int j = 0; j <= 3; j++)
+                {
+                    myArray [i,j] = (i==j) ? 1 : 0;
+                }
+            }
+			for (int i = 0; i <= 3; i++)
+			{
+				for (int j = 0; j <= 3; j++)
+				{
+                    Console.Write( myArray [i , j]);
+                }
+                Console.WriteLine("");
+			}
 
             Console.ReadLine();
         }
