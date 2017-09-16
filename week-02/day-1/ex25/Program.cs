@@ -25,9 +25,9 @@ namespace ex25
 			Console.WriteLine("Hello! Please enter a number and I'll show you it's multiplication table!");
             int x = int.Parse(Console.ReadLine());
 
-			for (int i = 0; i < 10; i++)
-			{
-				Console.WriteLine(x * i);
+			for (int i = 0; i < 11; i++)
+                
+            {   Console.WriteLine(i + " * " + x + " = " + x * i);
 			}
 
 			Console.ReadLine();
