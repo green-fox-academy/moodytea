@@ -20,6 +20,13 @@ namespace colors
             colors[1] = new string[] { "orange red", "red", "tomato" };
             colors[2] = new string[] { "orchid", "violet", "pink", "hot pink" };
 
+            for (int i = 0; i < colors.GetLength(0); i++)
+			{
+                for (int j = 0; j < colors.GetLength(1); j++)
+				{
+                    Console.WriteLine("Element({0},{1})={2}", i, j, colors[i, j]);
+				}
+			}
 			Console.ReadLine();
         }
     }
