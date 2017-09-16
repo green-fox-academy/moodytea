@@ -19,7 +19,7 @@ namespace SolarSystem
                 Console.WriteLine(planet);
             }
 
-			Console.WriteLine(planetList);
+			Console.ReadLine();
 		}
 	}
 }
