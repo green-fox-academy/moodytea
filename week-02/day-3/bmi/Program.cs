@@ -7,8 +7,8 @@ namespace bmi
         static void Main(string[] args)
         {
 			// Print the Body mass index (BMI) based on these values
-			double massInKg = 72.0;
-			double heightInM = 1.75;
+			double massInKg = 82.0;
+			double heightInM = 1.90;
             double BMI = massInKg / (heightInM *= heightInM);
 
 

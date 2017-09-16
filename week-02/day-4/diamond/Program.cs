@@ -26,7 +26,7 @@ namespace diamond
 
             for (i = 1; i <= (num - 1) / 2; i++)
 			{
-                for (j = num-i; j > 1; j--)
+                for (j = num-2*i; j > 1; j--)
 				{
 					Console.Write("1");
 				}
