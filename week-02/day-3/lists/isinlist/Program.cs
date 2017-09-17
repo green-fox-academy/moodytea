@@ -15,6 +15,8 @@ namespace isinlist
 
 			if (list.Contains(4)&&list.Contains(8)&& list.Contains(12)&& list.Contains(16))
                    Console.WriteLine("true");
+            else
+                Console.WriteLine("false");
 
         }
     }
