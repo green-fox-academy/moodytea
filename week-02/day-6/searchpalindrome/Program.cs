@@ -1,32 +1,51 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace searchpalindrome
 {
     class Program
-        public static void Reversed (string reversed) 
+	{
+		public static string Reversed(string s)
+		{
+			int counter = s.Length;
+			string t = "";
 
-            int counter = reversed.Length;
+			for (int i = counter - 1; i >= 0; i--)
+			{
+				t = t + s[i];
+			}
+			return t;
 
-            for (int i = counter-1; i >=0; i-- ){
-                Console.Write(Convert.ToString(reversed[i]));
+		}
+		public static bool IsPalindrome(string s)
+		{
+			return s.Equals(Reversed(s));
+		}
+
+        public static List<string> PalindromeSearch(string s)
+		{
+            var myList = new List<string>();
+            for (int i = 3; i <= s.Length; i++){
+                for (int j = 0; j <= s.Length-i; j++)
+                {
+                    if (IsPalindrome(s.Substring(j,i)))
+                        myList.Add(s.Substring(j, i)) ;
+                }
             }
-        public static void SearchPalindrom(string input, List<string> output)
-        {
-            
-        }
+
+            return myList;
+
+		}
         static void Main(string[] args)
         {
-			//Create a function named search palindrome following your current language's style guide. 
-			//It should take a string, search for palindromes that at least 3 characters long and 
-			//return a list with the found palindromes.
 
 			Console.WriteLine("Give me a word or sentence to check: ");
 			string userInput = Console.ReadLine();
-			var List = new List<string> { };
 
-			SearchPalindrome(userInput, List);
+            PalindromeSearch(userInput).ForEach(Console.WriteLine);
 
-			Console.ReadLine();
+
+            Console.ReadLine();
         }
     }
 }
