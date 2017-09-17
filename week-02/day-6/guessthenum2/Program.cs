@@ -7,7 +7,7 @@ namespace guessthenum
 	{
 		static void Main(string[] args)
 		{
-            int lives = 1;
+            int lives = 15;
             Console.WriteLine("Welcome to GuessTheNumber! You have " + lives + " lives! What is the maximum range of numbers you'd like to guess? ");
             int max = int.Parse(Console.ReadLine());
 			Random randy = new Random();
