@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace candyshop
 {
@@ -12,11 +13,14 @@ namespace candyshop
 			list.Add("Brownie");
 			list.Add(false);
 
-			// Accidentally we added "2" and "false" to the list. 
-			// Your task is to change from "2" to "Croissant" and change from "false" to "Ice cream"
-			// No, don't just remove the lines
+            // Accidentally we added "2" and "false" to the list. 
+            // Your task is to change from "2" to "Croissant" and change from "false" to "Ice cream"
+            // No, don't just remove the lines
+            list[list.IndexOf(2)]="Croissant";
+            list[list.IndexOf(false)] = "Ice Cream";
 
-			Console.WriteLine(list);
+            list.ForEach(Console.WriteLine);
+			
         }
     }
 }
