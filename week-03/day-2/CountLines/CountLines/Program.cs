@@ -10,7 +10,18 @@ namespace Countline
             if (path == "")
                 return 0;
             else
-                return path.Length;
+                for (int i = 0; i < path.Length; i++)
+                {
+                    if (path.Contains("/n"))
+                    {
+                        int counter = 0;
+                        counter += 1;
+                        return counter;
+                    }
+                    
+
+                }
+            return 404;
         }
         public static void Main(string[] args)
         {
