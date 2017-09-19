@@ -7,19 +7,23 @@ namespace Example
     {
         static void Main(string[] args)
         {
-            string path = @"./new-text.txt";
+            var NewText = @"./new-text.txt";
             try
             {
-                using (StreamWriter writer = new StreamWriter(path))
+                using (StreamWriter writer = new StreamWriter (NewText))
                 {
                     writer.WriteLine("My name is Dorothy Katona.");
                 }
             }
-            catch
+            catch (IOException)
             {
                 Console.WriteLine("Couldn't write file!");
             }
-            Console.ReadLine();
+            finally
+            {
+                Console.ReadLine();
+            }
+           
         }
     }
 }
