@@ -30,7 +30,18 @@ namespace ColoredBox
             var startPoint = new Point(rei, rei);
             var endPoint = new Point(rei, full);
             foxDraw.DrawLine(startPoint, endPoint);
-
+            foxDraw.StrokeColor(Colors.Green);
+            startPoint = new Point(rei, full);
+            endPoint = new Point(full, full);
+            foxDraw.DrawLine(startPoint, endPoint);
+            foxDraw.StrokeColor(Colors.Blue);
+            startPoint = new Point(full, full);
+            endPoint = new Point(full, rei);
+            foxDraw.DrawLine(startPoint, endPoint);
+            foxDraw.StrokeColor(Colors.Black);
+            startPoint = new Point(full, rei);
+            endPoint = new Point(rei, rei);
+            foxDraw.DrawLine(startPoint, endPoint);
         }
         public MainWindow()
         {
