@@ -20,29 +20,38 @@ namespace FillWithRectangles
 
     public partial class MainWindow : Window
     {
-        public static void DrawGreenPolygon(FoxDraw foxDraw)
+        public static void DrawPolygon(FoxDraw foxDraw, double p, byte w)
         {
-            var half = 150; //canvas.ActualHeight / 2;
-            var squareSideA = 10;
-            var x = half - squareSideA / 2;
-            var y = half + squareSideA / 2;
+            
+            var s = p / 2;
+            var b = p;
             var points = new List<Point>();
-            points.Add(new Point(x, x));
-            points.Add(new Point(x, y));
-            points.Add(new Point(y, y));
-            points.Add(new Point(y, x));
-
-            foxDraw.FillColor(Colors.Green);
+            points.Add(new Point(s, s + 30));
+            points.Add(new Point(s, b ));
+            points.Add(new Point(b, b ));
+            points.Add(new Point(b , s + 30));
             foxDraw.DrawPolygon(points);
+            foxDraw.FillColor(Color.FromRgb(w, 50, 50));
+
         }
         public MainWindow()
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            // draw a green 10x10 square to the canvas' center.
+            // draw four different size and color rectangles.
 
-            DrawGreenPolygon(foxDraw);
+            var x = 260;
+            
+            for (int i = 0; i <= 3; i++)
+            {
+                
+                
+                x -= 30;
+                byte b = Convert.ToByte(x - 5);
+                DrawPolygon(foxDraw, x, b);
+            }
 
+            
         }
     }
 }
