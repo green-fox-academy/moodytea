@@ -14,12 +14,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GreenFox;
 
-namespace CenterBox
+namespace RainbowBoxFunction
+
 {
 
     public partial class MainWindow : Window
     {
-        public static void DrawGreenPolygon(FoxDraw foxDraw, int squareSide)
+        public static void DrawGreenPolygon(FoxDraw foxDraw, int squareSide, int w)
         {
             var half = 150; //canvas.ActualHeight / 2;
             var x = half - squareSide / 2;
@@ -30,23 +31,24 @@ namespace CenterBox
             points.Add(new Point(y, y));
             points.Add(new Point(y, x));
 
-            foxDraw.FillColor(Colors.Green);
+            byte b = Convert.ToByte(w + 100);
+            byte c = Convert.ToByte(150-w);
+            byte d = Convert.ToByte((150-w)/2);
+            foxDraw.FillColor(Color.FromRgb(b, c, d));
             foxDraw.DrawPolygon(points);
         }
         public MainWindow()
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            // draw a green 10x10 square to the canvas' center.
             var squareSideA = 300;
-            var w = 250;
+            var w = 0;
             for (int i = 0; i < 30; i++)
             {
                 squareSideA -= 10;
-                w -= 5;
-                DrawGreenPolygon(foxDraw, squareSideA);
-                byte b = Convert.ToByte(w - 5);
-                foxDraw.FillColor(Color.FromRgb(b, 50, 50));
+                w += 5;
+                DrawGreenPolygon(foxDraw, squareSideA, w);
+                
             }
 
         }
