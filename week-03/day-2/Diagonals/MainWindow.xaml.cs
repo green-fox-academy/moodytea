@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace Diagonals
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            var foxDraw = new FoxDraw(canvas);
+            // draw the canvas' diagonals in green.
+
         }
     }
 }
