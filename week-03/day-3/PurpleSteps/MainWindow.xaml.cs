@@ -18,34 +18,30 @@ namespace PurpleSteps
 {
     public partial class MainWindow : Window
     {
-        public static void DrawGreenPolygon(FoxDraw foxDraw, int squareSide)
+        public static void DrawPolygon(FoxDraw foxDraw, int s, int a)
         {
-            var half = 150; //canvas.ActualHeight / 2;
-            var x = half - squareSide / 2;
-            var y = half + squareSide / 2;
             var points = new List<Point>();
-            points.Add(new Point(x, x));
-            points.Add(new Point(x, y));
-            points.Add(new Point(y, y));
-            points.Add(new Point(y, x));
+            points.Add(new Point(s, a));
+            points.Add(new Point(s + 15, a));
+            points.Add(new Point(a + 15, s + 15));
+            points.Add(new Point(s, a + 15));
 
-            foxDraw.FillColor(Colors.Green);
+            foxDraw.FillColor(Colors.Purple);
             foxDraw.DrawPolygon(points);
         }
+
         public MainWindow()
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            // draw a green 10x10 square to the canvas' center.
-            var squareSideA = 300;
-            var w = 250;
-            for (int i = 0; i < 30; i++)
+            int x, y;
+            x = 0;
+            y = 0;
+            for (int i = 0; i < 20; i++)
             {
-                squareSideA -= 10;
-                w -= 5;
-                DrawGreenPolygon(foxDraw, squareSideA);
-                byte b = Convert.ToByte(w - 5);
-                foxDraw.FillColor(Color.FromRgb(b, 50, 50));
+                x += 15;
+                y += 15;
+                DrawPolygon(foxDraw, x, y);
             }
 
         }
