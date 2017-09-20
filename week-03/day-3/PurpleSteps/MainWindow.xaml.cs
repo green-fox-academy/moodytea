@@ -18,13 +18,13 @@ namespace PurpleSteps
 {
     public partial class MainWindow : Window
     {
-        public static void DrawPolygon(FoxDraw foxDraw, int s, int a)
+        public static void DrawPolygon(FoxDraw foxDraw, int s, int a, int j)
         {
             var points = new List<Point>();
             points.Add(new Point(s, a));
-            points.Add(new Point(s + 15, a));
-            points.Add(new Point(a + 15, s + 15));
-            points.Add(new Point(s, a + 15));
+            points.Add(new Point(s  + j, a));
+            points.Add(new Point(a + j, s + j));
+            points.Add(new Point(s, a  + j));
 
             foxDraw.FillColor(Colors.Purple);
             foxDraw.DrawPolygon(points);
@@ -37,11 +37,13 @@ namespace PurpleSteps
             int x, y;
             x = 0;
             y = 0;
-            for (int i = 0; i < 20; i++)
+            int j = 1;
+            for (int i = 1; i < 6; i++)
             {
-                x += 15;
-                y += 15;
-                DrawPolygon(foxDraw, x, y);
+                j *= i;
+                x = j;
+                y = j;
+                DrawPolygon(foxDraw, x, y, j);
             }
 
         }
