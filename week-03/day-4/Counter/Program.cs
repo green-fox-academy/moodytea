@@ -5,24 +5,26 @@ namespace Counter
 {
     class Program
     {
-        public static void Recurse(int remaining)
+        public static void countDown(int integer)
         {
-            while (remaining != 0)
+            if (integer == 1)
             {
-                remaining -= 1;
-                Console.WriteLine(remaining);
-                
+                Console.WriteLine(integer);
             }
-
-            Recurse(remaining);
-
+            else
+            {
+                Console.WriteLine(integer);
+                integer--;
+                countDown(integer);
+            }
         }
         static void Main(string[] args)
         {
             // Write a recursive function that takes one parameter: n and counts down from n.
 
             int n = 40;
-            Recurse(n + 1);
+            countDown(n);
+            Console.Read();
         }
     }
 }
