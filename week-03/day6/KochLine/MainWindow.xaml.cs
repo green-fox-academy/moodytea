@@ -25,7 +25,7 @@ namespace KochLine
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            SnowFlake(foxDraw, canvas, 30, 220, 250, 5, 0);
+            SnowFlake(foxDraw, canvas, 30, 220, 250, 4, 0);
             foxDraw.BackgroundColor(Colors.Black);
         }
         public static void Koch(FoxDraw foxDraw, Canvas canvas, double x, double y, double length, int depth, double a)
@@ -48,7 +48,7 @@ namespace KochLine
         public static void SnowFlake (FoxDraw foxDraw, Canvas canvas, double x, double y, double length, int depth, double a)
         {
             foxDraw.StrokeColor(Colors.White);
-            Koch(foxDraw, canvas, x, y, length, depth, 0);
+            KocaptureMouse();h(foxDraw, canvas, x, y, length, depth, 0);
             Koch(foxDraw, canvas, x + length, y, length, depth, 4 * Math.PI / 3);
             Koch(foxDraw, canvas, x + length/2, y - length * Math.Sqrt(3) / 2, length, depth, 2 * Math.PI / 3);
         }
