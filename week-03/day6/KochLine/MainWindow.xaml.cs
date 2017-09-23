@@ -17,7 +17,7 @@ using GreenFox;
 namespace KochLine
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// For a merry, happy Xmas! In September.
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -25,8 +25,8 @@ namespace KochLine
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            Koch(foxDraw, canvas, 0, 150, 300, 3, 0);
-            foxDraw.BackgroundColor(Colors.LightGray);
+            SnowFlake(foxDraw, canvas, 30, 220, 250, 5, 0);
+            foxDraw.BackgroundColor(Colors.Black);
         }
         public static void Koch(FoxDraw foxDraw, Canvas canvas, double x, double y, double length, int depth, double a)
         {
@@ -44,6 +44,13 @@ namespace KochLine
             {
                 foxDraw.DrawLine(x, y, x + length * Math.Cos(a), y + length * Math.Sin(a));
             }
+        }
+        public static void SnowFlake (FoxDraw foxDraw, Canvas canvas, double x, double y, double length, int depth, double a)
+        {
+            foxDraw.StrokeColor(Colors.White);
+            Koch(foxDraw, canvas, x, y, length, depth, 0);
+            Koch(foxDraw, canvas, x + length, y, length, depth, 4 * Math.PI / 3);
+            Koch(foxDraw, canvas, x + length/2, y - length * Math.Sqrt(3) / 2, length, depth, 2 * Math.PI / 3);
         }
     }
         
