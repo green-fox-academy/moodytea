@@ -13,23 +13,23 @@ namespace Domino
             // Create a function to write the dominous to the console in the following format
             // eg: [2, 4], [4, 3], [3, 5] ...
 
-            int[,] numbers = new int[6, 2];
-
-
-            for (int i = 0; i < 2; i++)
+            int j = 0;
+            Console.Write("[" + dominoes[0].GetValues()[0]+", " + dominoes[0].GetValues()[1] + "], ");
+            int k = dominoes[0].GetValues()[1];
+            for (int i = 0; i < dominoes.Count - 1; i++)
             {
-				int[] dominoArray = dominoes[i].GetValues();
-                Console.Write("[");
-                foreach (int element in dominoArray)
+                j = 1;
+                while (j <= dominoes.Count - 1 && dominoes[j].GetValues()[0] != k)
                 {
-                    Console.Write(element.ToString()+", ");
+                    j++;
                 }
-                Console.Write("], ");
+                Console.Write("[" + dominoes[j].GetValues()[0] + ", " + dominoes[j].GetValues()[1] + "], ");
+                k = dominoes[j].GetValues()[1];
             }
-
+            Console.ReadKey();
         }
 
-		public static List<Domino> InitializeDominoes()
+        public static List<Domino> InitializeDominoes()
 		{
 			var dominoes = new List<Domino>();
 			dominoes.Add(new Domino(5, 2));
@@ -39,8 +39,6 @@ namespace Domino
 			dominoes.Add(new Domino(2, 4));
 			dominoes.Add(new Domino(7, 1));
             dominoes.ToArray();
-
-            //dominoes.Sort();
 
 			return dominoes;
 		}
