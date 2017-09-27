@@ -14,5 +14,14 @@ namespace AppleProject.AppleProjectTest
             Assert.AreEqual(apple, output);
 
         }
+		[Test]
+		public void FailApple()
+		{
+			var ringo = new AddAppleClass();
+			string apple = "mango";
+			string output = AddAppleClass.GetApple();
+			Assert.AreEqual(apple, output);
+
+		}
     }
 }
