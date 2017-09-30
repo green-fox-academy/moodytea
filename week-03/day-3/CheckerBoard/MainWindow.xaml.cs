@@ -66,7 +66,7 @@ namespace CheckerBoard
 
                 }
                 y += 30;
-                DrawPolygon(foxDraw, x, y);
+                //DrawPolygon(foxDraw, x, y);
                 x = 0;
             }
 
