@@ -22,7 +22,7 @@ namespace SuperNaturalClasses
             tfw.Add(crowley);
             Demon abbadon = new Demon();
             tfw.Add(abbadon);
-            Angel cass = new Angel("Castiel", 234, "fallen");
+            Angel cass = new Angel("Castiel", 2324, "fallen");
             tfw.Add(cass);
             Angel lucy = new Angel();
             tfw.Add(lucy);

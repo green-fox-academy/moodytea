@@ -13,8 +13,8 @@ namespace SuperNaturalClasses
         public SupernaturalBeings()
         {
             this.className = "Supernatural Beings"; 
-            this.angels = null;
-            this.demons = null;
+            this.angels = angels;
+            this.demons = demons;
         }
 
         public void AddAngel(Angel angel)

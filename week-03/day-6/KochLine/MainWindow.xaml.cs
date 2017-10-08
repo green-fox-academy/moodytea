@@ -48,7 +48,7 @@ namespace KochLine
         public static void SnowFlake (FoxDraw foxDraw, Canvas canvas, double x, double y, double length, int depth, double a)
         {
             foxDraw.StrokeColor(Colors.White);
-            KocaptureMouse();h(foxDraw, canvas, x, y, length, depth, 0);
+            Koch(foxDraw, canvas, x, y, length, depth, 0);
             Koch(foxDraw, canvas, x + length, y, length, depth, 4 * Math.PI / 3);
             Koch(foxDraw, canvas, x + length/2, y - length * Math.Sqrt(3) / 2, length, depth, 2 * Math.PI / 3);
         }

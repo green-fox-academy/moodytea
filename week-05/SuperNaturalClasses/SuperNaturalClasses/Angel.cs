@@ -41,7 +41,7 @@ namespace SuperNaturalClasses
 
         public override void GetGoal()
         {
-            Console.WriteLine("Help hunters save or destroy the world.");
+            Console.WriteLine("My goal is: help hunters save or destroy the world.");
         }
     }
 }
