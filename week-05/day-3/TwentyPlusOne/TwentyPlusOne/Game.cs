@@ -15,6 +15,7 @@ namespace TwentyPlusOne
         public static int counter = 0;
         public static int highScore = 0;
         public int housesHand = Card.randy.Next(15, 22);
+        public static string nameAndScore;
 
         public Game()
         {
@@ -36,7 +37,7 @@ namespace TwentyPlusOne
 
         public void PlayersChoice()
         {
-            Console.WriteLine("Enter 'r' for random, 'f' for firstCard, 'l' for lastcard pulling.");
+            Console.WriteLine("Enter [r]andom, [f]irstCard, [l]astcard pulling.");
             string playersChoice = Console.ReadLine();
             if (playersChoice == "r")
             {
@@ -84,7 +85,7 @@ namespace TwentyPlusOne
             {
                 playerVal = playerVal + 10;
             }
-            if (playerCard.Rank == Card.RankList.Ace && playerVal > 10)
+            else if (playerCard.Rank == Card.RankList.Ace && playerVal > 10)
             {
                 playerVal = playerVal + 1;
             }
@@ -93,12 +94,12 @@ namespace TwentyPlusOne
                 playerVal = playerVal + (int)playerCard.Rank;
             }
             counter++;
-            PlayersHand();
+           PlayersHand();
         }
 
         internal void PlayersChoiceForHit()
         {
-            Console.WriteLine("Would you like another card? Press 'y' for yes and 'n' no.");
+            Console.WriteLine("Would you like another card? Press [y]es or [n]o.");
             string choice = Console.ReadLine();
             if (choice == "y")
             {
@@ -119,7 +120,7 @@ namespace TwentyPlusOne
         {
             Console.WriteLine($"The value of your hand is: {playerVal}.");
             
-            if (playerVal < 21 && counter > 2)
+            if (playerVal < 21 && counter >= 2)
             {
                 PlayersChoiceForHit();
             }
@@ -127,7 +128,6 @@ namespace TwentyPlusOne
             {
                 WinOrLose();
             }
-
         }
 
         internal void HousesHand()
@@ -143,15 +143,14 @@ namespace TwentyPlusOne
         public void WinOrLose()
         {
             HousesHand();
-            string wantToSeeHighScore = Console.ReadLine();
             if (housesHand < playerVal && playerVal <= 21)
             {
                 Console.WriteLine("Player won! Congrats!");
                 Console.WriteLine("Please enter your name for the BlackJack Wall Of Fame for your highscore!");
                 string nameOfWinner = Console.ReadLine();
                 HighScoreCounter();
-
-
+                nameAndScore = $"{nameOfWinner} {highScore}";
+                HighScore.HighAdder(nameAndScore);
             }
             else if(housesHand == playerVal)
             {
@@ -161,10 +160,12 @@ namespace TwentyPlusOne
             {
                 Console.WriteLine("House won! You lost this time, mate.");
             }
-            Console.WriteLine("Wanna see current BlackJack Wall Of Fame highscore list? Press 'y' if so!");
+            Console.WriteLine("Wanna see current BlackJack Wall Of Fame highscore list? Press [y]es!");
+            string wantToSeeHighScore = Console.ReadLine();
             if (wantToSeeHighScore == "y")
             {
-                HighScore.ListOfHighs();
+                HighScore.HighLister();
+                Console.ReadKey();
             }
                 
         }

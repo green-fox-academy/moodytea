@@ -11,7 +11,8 @@ namespace TwentyPlusOne
     class HighScore
     {
         public static List<string> listAsIs = new List<string>() { };
-        public static string[] stringToConvert = File.ReadAllLines("..//..//highscorelist.txt");
+        public static string[] stringToConvert = File.ReadAllLines(@"c:\Users\doa\moodytea\week-05\day-3\TwentyPlusOne\TwentyPlusOne\highscorelist.txt");
+        
 
         public static List<string> ListOfHighs()
         {
@@ -31,8 +32,9 @@ namespace TwentyPlusOne
 
         }
 
-        public void HighLister()
+        public static void HighLister()
         {
+            listAsIs = new List<string>() { };
             ListOfHighs();
             if (listAsIs.Count.Equals(0))
             {
@@ -46,18 +48,22 @@ namespace TwentyPlusOne
                     Console.WriteLine((i) + " - " + highs);
                     i++;
                 }
+                Console.WriteLine("And the new score of: " + Game.nameAndScore);
             }
         }
 
-        public void HighAdder(string highToAdd)
+        public static void HighAdder(string highToAdd)
         {
             ListOfHighs();
-            listAsIs.Add(highToAdd);
             if (highToAdd.Length.Equals(0))
             {
-                Console.WriteLine("Unable to add: no task provided");
+                Console.WriteLine("Unable to add: no highscore provided");
             }
-            File.AppendAllText("..//..//highscorelist.txt", "\n" + highToAdd);
+            else
+            {
+                listAsIs.Add(highToAdd);
+                File.AppendAllText(@"c:\Users\doa\moodytea\week-05\day-3\TwentyPlusOne\TwentyPlusOne\highscorelist.txt", "\n" + highToAdd); 
+            }
         }
     }
 }

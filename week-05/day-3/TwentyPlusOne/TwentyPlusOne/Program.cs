@@ -10,15 +10,14 @@ namespace TwentyPlusOne
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("BlackJack 21 Game");
+            Console.WriteLine("Welcome to the awesomest BlackJack 21 Game");
+            string divider = "-------------------------------------------";
+            Console.WriteLine(divider);
+            Console.WriteLine(divider);
 
             Game game = new Game();
 
             game.Start();
-
-            game.PlayersChoiceForHit();
-
-            Console.ReadKey();
         }
     }
 }
