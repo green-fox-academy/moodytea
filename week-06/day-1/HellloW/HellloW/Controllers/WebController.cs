@@ -7,15 +7,19 @@ using HellloW.Models;
 
 namespace HellloW.Controllers
 {
+
     [Route("web")]
     public class WebController : Controller
     {
+        public static long id;
+        //public string name;
         [Route("greeting")]
-        public IActionResult Greeting()
+        
+        public IActionResult Greeting(string name)
         {
-            var greeting = new Greeting()
+            var greeting = new Greeting(name)
             {
-                content = "awesome people"
+                content = $"{name} this site has been loaded {id++} times"
             };
 
             return View(greeting);
