@@ -20,10 +20,10 @@ namespace HellloW.Controllers
         }
 
         [Route("greeting")]
-        public IActionResult Greating2 (string name)
+        public IActionResult Greeting2 (string name)
         {
-            Greating.id += 1;
-            return new JsonResult(new Greating(name));
+            Greeting.id += 1;
+            return new JsonResult(new Greeting(name));
         }
 
     }
