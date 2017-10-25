@@ -1,0 +1,33 @@
+﻿@model TripsOfDrWho.Models.Trips
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Time of a Trip: Doctor Who Trip Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+</head>
+<body style="background-image:url(https://pre00.deviantart.net/f86f/th/pre/i/2015/007/4/5/simple_tardis_wallpaper_by_nintendoxs-d8d0ukz.png)">
+        <table border="1" width="850" cellpadding="20" cellspacing="2" align="center" style="background-image:url(https://68.media.tumblr.com/4184b557194a37f9991c84b9b8235a84/tumblr_inline_ncs71bOers1shcyx2.gif); background-repeat:no-repeat; background-size:cover">
+            <tr style="color:white" >
+                <th>Index</th>
+                <th>Name</th>
+                <th>Good Character</th>
+                <th>Miles</th>
+
+            </tr>
+            @{int index = 0;}
+            @foreach (var trip in TripsOfDrWho.Controllers.HomeController.trips)
+            {
+                index++;
+                <tr style="@((@trip.Name=="Eleventh") ? "background-color:hsla(247, 19%, 65%, 0.48); color:white": "color:white") ">
+                    <td align="center">@index</td>
+                    <td align="center">@trip.Name </td>
+                    <td align="center">@trip.IsGood</td>
+                    <td align="center">@trip.Miles.ToString("0.00 miles")</td>
+                </tr>
+
+            }
+        </table>
+        <button class="button" style="border-radius:3px; text-align:center; text-transform:uppercase">New character</button>
+</body>
+</html>
