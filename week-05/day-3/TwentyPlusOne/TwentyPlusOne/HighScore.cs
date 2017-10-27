@@ -61,6 +61,7 @@ namespace TwentyPlusOne
             }
             else
             {
+                listAsIs.Sort();
                 listAsIs.Add(highToAdd);
                 File.AppendAllText(@"c:\Users\doa\moodytea\week-05\day-3\TwentyPlusOne\TwentyPlusOne\highscorelist.txt", "\n" + highToAdd); 
             }

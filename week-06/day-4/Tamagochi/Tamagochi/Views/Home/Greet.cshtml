@@ -1,0 +1,25 @@
+﻿@model Tamagochi.Models.Greeting
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body style="background-image: url(http://data.whicdn.com/images/250172775/original.gif); background-repeat:no-repeat">
+
+    <p style="padding: 50px; font-size:xx-large; font-family: sans-serif; color: crimson"> Congratulations, @Model.Name is born!</p>
+
+    <fieldset style="background-color:hsla(247, 19%, 65%, 0.48); padding: 50px; font-size:xx-large; font-family: sans-serif; color: crimson">
+        <legend>Would you like to feed @Model.Name? Or would you prefer to teach @Model.Name tricks?</legend>
+        <p>
+            <input type="submit" value="Visit Food Store!" />
+        </p>
+        <p>
+            <input type="submit" value="Learn Some Tricks!" />
+        </p>
+    </fieldset>
+
+</body>
+</html>@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

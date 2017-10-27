@@ -16,7 +16,7 @@ namespace TwentyPlusOne
             Console.WriteLine(divider);
 
             Game game = new Game();
-
+            
             game.Start();
         }
     }

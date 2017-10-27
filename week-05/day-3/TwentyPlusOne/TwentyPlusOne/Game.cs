@@ -167,7 +167,18 @@ namespace TwentyPlusOne
                 HighScore.HighLister();
                 Console.ReadKey();
             }
-                
+            Console.WriteLine("Would you like a new game? Press [y]es!");
+            string wantNewGame = Console.ReadLine();
+            if (wantNewGame == "y")
+            {
+                housesHand = Card.randy.Next(15, 22);
+                playerVal = 0;
+                counter = 0;
+                highScore = 0;
+                cards = new List<Card>();
+                this.Start();
+            }
+
         }
     }
 }
