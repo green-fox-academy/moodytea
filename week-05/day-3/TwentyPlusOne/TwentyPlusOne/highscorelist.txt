@@ -1,6 +1,4 @@
 ﻿Dorothy 600
-Dooo 390
-D 290
-Done 90
-Dorka 200
-Dorka 400
+Dorothy 390
+Dorothy 590
+Dorothy 80

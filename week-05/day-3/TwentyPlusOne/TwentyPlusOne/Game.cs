@@ -81,17 +81,18 @@ namespace TwentyPlusOne
         public void ConverterForCardToInt()
         {
             
-            if (playerCard.Rank == Card.RankList.Jack || playerCard.Rank == Card.RankList.King || playerCard.Rank == Card.RankList.Queen)
+            if (playerCard.Rank == Card.RankList.Jack || playerCard.Rank == Card.RankList.King 
+            | playerCard.Rank == Card.RankList.Queen)
             {
-                playerVal = playerVal + 10;
+                playerVal += valTen;
             }
             else if (playerCard.Rank == Card.RankList.Ace && playerVal > 10)
             {
-                playerVal = playerVal + 1;
+                playerVal += valOne;
             }
             else
             {
-                playerVal = playerVal + (int)playerCard.Rank;
+                playerVal += (int)playerCard.Rank;
             }
             counter++;
            PlayersHand();
