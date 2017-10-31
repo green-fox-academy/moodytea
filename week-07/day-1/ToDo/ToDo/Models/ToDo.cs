@@ -7,5 +7,9 @@ namespace ToDo.Models
 {
     public class ToDo
     {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public bool IsUrgent { get; set; } = false;
+        public bool IsDone { get; set; } = false;
     }
 }
