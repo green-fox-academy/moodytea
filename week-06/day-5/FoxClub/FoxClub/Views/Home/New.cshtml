@@ -1,0 +1,35 @@
+﻿@model FoxClub.Models.Fox
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>NewFox</title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
+</head>
+<body>
+    <header>
+        Adopt New Fox
+    </header>
+    <content>
+        <div>
+            <img src="../../foxout.gif" alt="fox pic" />
+        </div>
+        <div>
+            This Fox is currently living outside, starving. Would you like to adopt it?
+        </div>
+        <form method="post">
+            <fieldset>
+                <legend>Adoption form:</legend>
+                <div>
+                    <label for="Name">Your fox's name:</label>
+                    <input type="text" name="name"/>
+                </div>
+                <p>
+                    <input type="submit" value="Adopt!" />
+                </p>
+            </fieldset>
+        </form>
+    </content>
+</body>
+</html>@*
+*@
+@{
+}

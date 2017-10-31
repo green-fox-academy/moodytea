@@ -7,9 +7,13 @@ namespace FoxClub.Models
 {
     public class Fox
     {
-        public string Name { get; set; } = "Dean";
-        public SnacksAndTricks.Food Food { get; set; } = SnacksAndTricks.Food.Pie;
-        public SnacksAndTricks.Drink Drink { get; set; } = SnacksAndTricks.Drink.Beer;
-        public SnacksAndTricks.Tricks Tricks { get; set; } = SnacksAndTricks.Tricks.protectSammy;
+        public string Name { get; set; }
+        public SnacksAndTricks.Food Food { get; set; } 
+        public SnacksAndTricks.Drink Drink { get; set; } 
+        public SnacksAndTricks.Tricks Tricks { get; set; } 
+
+        public Fox()
+        {
+        }
     }
 }

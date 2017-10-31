@@ -1,0 +1,45 @@
+﻿@model FoxClub.Models.Fox
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MyFox</title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
+</head>
+<body>
+
+    <nav>
+        <a href="/information">Information</a>
+        <a href="/information/nutritionstore">Nutrition Store</a>
+        <a href="/information/trickclasses">Trick Teaching Classes</a>
+    </nav>
+    <br />
+    <br />
+    <header>
+        Tricks Teaching Page
+    </header>
+    <content>
+        <div>
+            <img src="../../foxtrain.gif" alt="fox pic" />
+        </div>
+        <div>
+            This is @Model.Name.
+            He knows @Model.Tricks.ToString() trick.
+            Wanna teach them more?
+        </div>
+        <form method="post">
+            <fieldset>
+                <legend>Tricks to learn:</legend>
+                <div>
+                    <label for="User">Trick name:</label>
+                    <input type="text" tricks="Tricks" value="" />
+                </div>
+                <p>
+                    <input type="submit" value="Learn!" />
+                </p>
+            </fieldset>
+        </form>
+    </content>
+</body>
+</html>@*
+*@
+@{
+}

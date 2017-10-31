@@ -1,0 +1,49 @@
+﻿@model FoxClub.Models.Fox
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MyFox</title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
+</head>
+<body>
+
+    <nav>
+        <a href="/information">Information</a>
+        <a href="/information/nutritionstore">Nutrition Store</a>
+        <a href="/information/trickclasses">Trick Teaching Classes</a>
+    </nav>
+    <br />
+    <br />
+    <header>
+        NutrInfo
+    </header>
+    <content>
+        <div>
+            <img src="../../foxwalk.gif" alt="fox pic" />
+        </div>
+        <div>
+            This is @Model.Name.
+            Currently living on @Model.Food.ToString() and @Model.Drink.ToString().
+            Wanna change this diet?
+        </div>
+        <form method="post">
+            <fieldset>
+                <legend>New diet input:</legend>
+                <div>
+                    <label for="User">Food:</label>
+                    <input type="text" food="Food" value="" />
+                </div>
+                <div>
+                    <label for="User">Drink:</label>
+                    <input type="text" drink="Drink" value="" />
+                </div>
+                <p>
+                    <input type="submit" value="Change Diet!" />
+                </p>
+            </fieldset>
+        </form>
+    </content>
+</body>
+</html>@*
+*@
+@{
+}
