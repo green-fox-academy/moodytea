@@ -1,13 +1,12 @@
-﻿@*@model ToDo.Models.ToDoClass*@
+﻿@model ToDo.Models.ToDoClass
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>SUPERSTAR TO DO LIST</title>
 </head>
 <body>
-    <ul>@*@Model.Title.ToString();*@
-    <li>first task</li>
-    <li>second task</li>
+    <h1>ToDos For Today</h1>
+    <ul><li>@Model.Title.ToString();</li>
     </ul>
 </body>
 </html>
