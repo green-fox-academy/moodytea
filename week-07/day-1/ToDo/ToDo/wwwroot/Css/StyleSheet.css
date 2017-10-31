@@ -1,2 +1,18 @@
-﻿body {
+﻿body 
+{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a
+{
+    text-decoration: none;
+}
+table 
+{
+    width: 850px;
+}
+td, tr
+{
+    border: 1px solid;
+    text-align : center;
 }
