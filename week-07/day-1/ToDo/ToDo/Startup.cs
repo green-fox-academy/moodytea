@@ -15,7 +15,7 @@ namespace ToDo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped<Models.ToDo>();
+            services.AddScoped<Models.ToDoClass>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
