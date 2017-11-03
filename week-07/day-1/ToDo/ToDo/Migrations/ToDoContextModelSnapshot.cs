@@ -25,7 +25,8 @@ namespace ToDo.Migrations
 
                     b.Property<bool>("IsUrgent");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .IsRequired();
 
                     b.HasKey("ID");
 

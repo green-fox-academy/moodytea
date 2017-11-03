@@ -12,15 +12,26 @@ namespace ToDo.Controllers
     [Route("todo")]
     public class ToDoController : Controller
     {
-        public ToDoContext toDoContext;
+        private ToDoContext toDoContext;
+        List<ToDo.Models.ToDoClass> list;
 
-
+        public ToDoController(ToDoContext toDoContext)
+        {
+            this.toDoContext = toDoContext;
+            list = toDoContext.ToDos.ToList();
+        }
 
         [Route("")]
         [Route("list")]
         public IActionResult Index()
         {
-            return View(toDoContext.ToDos.ToList());
+            return View(list);
+        }
+
+        [Route("new")]
+        public IActionResult New()
+        {
+            return View(list);
         }
     }
 }

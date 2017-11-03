@@ -15,5 +15,10 @@ namespace ToDo.Entities
         }
 
         public DbSet<ToDoClass> ToDos { get;set; }
+
+        public void Add(ToDoClass toDoClass)
+        {
+            ToDos.Add(toDoClass);
+        }
     }
 }
