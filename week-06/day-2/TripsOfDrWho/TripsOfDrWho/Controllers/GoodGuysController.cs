@@ -20,9 +20,9 @@ namespace TripsOfDrWho.Controllers
 
         [Route("")]
         [Route("trips")]
-        public IActionResult Index(Trips trip1)
+        public IActionResult Index()
         {
-            return View(trip1);
+            return View();
         }
 
     }

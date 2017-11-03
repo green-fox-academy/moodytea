@@ -1,4 +1,4 @@
-﻿@model ToDo.Models.ToDoClass
+﻿@model List<ToDo.Models.ToDoClass>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,6 +8,7 @@
 <nav><a href="/new">Add New ToDo</a></nav>
 <body>
     <h1>ToDos For Today</h1>
+
     <table>
         <tr>
             <th>ID</th>
@@ -15,15 +16,17 @@
             <th>Done</th>
             <th>Urgent</th>
         </tr>
-        <tr>
-            <td></td>
-            <td>
-                first task
-                @*@Model.Title.ToString();*@
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td>@item.IsDone</td>
+            <td>@item.IsUrgent</td>
+            </tr>
+
+        }
+        
     </table>
     
 </body>
