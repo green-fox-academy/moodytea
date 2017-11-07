@@ -27,8 +27,35 @@ namespace WebApp.Controllers
             else
             {
                 return Json(new { error = "Please provide an input!" });
+            }   
+        }
+
+        [HttpGet]
+        [Route("/doubling")]
+        public JsonResult Greeter(string name, string title)
+        {
+            if (name != String.Empty && title != String.Empty)
+            {
+                return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}!" });
             }
-            
+            else
+            {
+                return Json(new { error = "Please provide a name!" });
+            }
+        }
+
+        [HttpGet]
+        [Route("/appenda/{appendable}")]
+        public JsonResult AppendA(string appendable)
+        {
+            if (appendable != String.Empty)
+            {
+                return Json(new { appended = $"{appendable}a" });
+            }
+            else
+            {
+                return Json(new { error = 404 });
+            }
         }
     }
 }
