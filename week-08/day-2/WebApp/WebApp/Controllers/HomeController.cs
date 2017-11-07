@@ -13,6 +13,7 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
         UntilClass until = new UntilClass();
+        JsonNumbers json = new JsonNumbers();
 
         [Route("")]
         public IActionResult Index()
@@ -120,61 +121,47 @@ namespace WebApp.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("/dountil/factor")]
-        //[Route("/dountil/sum")]
-        //public JsonResult Factor3()
-        //{
-        //    return Json(new { error = "Please provide a number!" });
-        //}
 
-        //[HttpPost]
-        //[Route("/dountil")]
-        //public IActionResult Factor2()
-        //{
-        //    return NotFound();
-        //}
+        [HttpPost]
+        [Route("/arrays")]
+        public JsonResult Arrays([FromBody]JsonNumbers json)
+        {
+            int number = 0;
+            int i = 0;
+            int[] number2 = new int[json.numbers.Length];
 
-        //[HttpPost]
-        //[Route("/arrays")]
-        //public JsonResult Arrays(JsonNumbers json)
-        //{
-        //    int number = 0;
-        //    int i = 0;
-        //    int[] number2 = new int[numbers.Length];
-
-        //    if (what == "sum")
-        //    {
-        //        do
-        //        {
-        //            number += numbers[i];
-        //            i++;
-        //        } while (i != numbers.Length);
-        //        return Json(new { until = number });
-        //    }
-        //    else if (what == "multiply")
-        //    {
-        //        do
-        //        {
-        //            number *= numbers[i];
-        //            i++;
-        //        } while (i != numbers.Length);
-        //        return Json(new { until = number });
-        //    }
-        //    else if (what == "double")
-        //    {
-        //        do
-        //        {
-        //            number2[i] = numbers[i] * 2;
-        //            i++;
-        //        } while (i != numbers.Length);
-        //        return Json(new { until = number2 });
-        //    }
-        //    else
-        //    {
-        //        return Json(new { error = "Please provide what to do with the numbers!" });
-        //    }
-        //}
+            if (json.what == "sum")
+            {
+                do
+                {
+                    number += json.numbers[i];
+                    i++;
+                } while (i != json.numbers.Length);
+                return Json(new { until = number });
+            }
+            else if (json.what == "multiply")
+            {
+                do
+                {
+                    number *= json.numbers[i];
+                    i++;
+                } while (i != json.numbers.Length);
+                return Json(new { until = number });
+            }
+            else if (json.what == "double")
+            {
+                do
+                {
+                    number2[i] = json.numbers[i] * 2;
+                    i++;
+                } while (i != json.numbers.Length);
+                return Json(new { until = number2 });
+            }
+            else
+            {
+                return Json(new { error = "Please provide what to do with the numbers!" });
+            }
+        }
 
         //[HttpPost]
         //[Route("/dountil/factor")]
