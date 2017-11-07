@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace WebApp.Models
 {
-    public class JsonNumbers
+    public class UntilClass
     {
-        public int[] numbers { get; set; }
-        public string what { get; set; }
+        public int Until { get; set; }
+        //public string what { get; set; }
     }
 }
