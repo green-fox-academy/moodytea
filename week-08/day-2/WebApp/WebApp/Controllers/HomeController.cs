@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
+
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,6 +12,9 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
+        public string what { get; private set; }
+        public int [] numbers { get; private set; }
+
         [Route ("")]
         public IActionResult Index()
         {
@@ -31,7 +36,7 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        [Route("/doubling")]
+        [Route("/greeter")]
         public JsonResult Greeter(string name, string title)
         {
             if (name != String.Empty && title != String.Empty)
@@ -97,6 +102,49 @@ namespace WebApp.Controllers
             else
             {
                 return Json(new { error = "Please provide a number!" });
+            }
+
+
+        }
+
+        [HttpPost]
+        [Route("/arrays")]
+        public JsonResult Arrays(JsonNumbers json)
+        {
+            int number = 0;
+            int i = 0;
+            int[] number2 = new int[numbers.Length] { };
+
+            if (what == "sum")
+            {
+                do
+                {
+                    number += numbers[i];
+                    i++;
+                } while (i != numbers.Length);
+                return Json(new { until = number });
+            }
+            else if (what == "multiply")
+            {
+                do
+                {
+                    number *= numbers[i];
+                    i++;
+                } while (i != numbers.Length);
+                return Json(new { until = number });
+            }
+            else if (what == "double")
+            {
+                do
+                {
+                    number2[i] = numbers[i]*2;
+                    i++;
+                } while (i != numbers.Length);
+                return Json(new { until = number2 });
+            }
+            else
+            {
+                return Json(new { error = "Please provide what to do with the numbers!" });
             }
         }
     }
