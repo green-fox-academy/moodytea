@@ -57,5 +57,47 @@ namespace WebApp.Controllers
                 return Json(new { error = 404 });
             }
         }
+
+        [HttpPost]
+        [Route("/dountil/sum")]
+        public JsonResult Sum(int input)
+        {
+            int i = 0;
+            do
+            {
+                input += input;
+                i++;
+            } while (i != input);
+
+            if (input != 0)
+            {
+                return Json(new { until = $"{input}" });
+            }
+            else
+            {
+                return Json(new { error = "Please provide a number!" });
+            }
+        }
+
+        [HttpPost]
+        [Route("/dountil/factor")]
+        public JsonResult Factor(int input)
+        {
+            int i = 0;
+            do
+            {
+                input *= input;
+                i++;
+            } while (i != input);
+
+            if (input != 0)
+            {
+                return Json(new { until = $"{input}" });
+            }
+            else
+            {
+                return Json(new { error = "Please provide a number!" });
+            }
+        }
     }
 }
