@@ -126,7 +126,7 @@ namespace WebApp.Controllers
         [Route("/arrays")]
         public JsonResult Arrays([FromBody]JsonNumbers json)
         {
-            int number = 0;
+            int number = 1;
             int i = 0;
             int[] number2 = new int[json.numbers.Length];
 
@@ -137,7 +137,7 @@ namespace WebApp.Controllers
                     number += json.numbers[i];
                     i++;
                 } while (i != json.numbers.Length);
-                return Json(new { until = number });
+                return Json(new { until = number-1 });
             }
             else if (json.what == "multiply")
             {
