@@ -2,3 +2,5 @@
 Dorothy 390
 Dorothy 590
 Dorothy 80
+john 300
+john 90

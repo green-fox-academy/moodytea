@@ -28,17 +28,27 @@
         <form method="post">
             <fieldset>
                 <legend>New diet input:</legend>
+                    <div>
+                        <label for="User">Food name:</label>
+
+                        <select>
+                            <option value="1">@FoxClub.Models.SnacksAndTricks.Food.Burger</option>
+                            <option value="2">@FoxClub.Models.SnacksAndTricks.Food.Pie</option>
+                            <option value="3">@FoxClub.Models.SnacksAndTricks.Food.Salad</option>
+                        </select>
+                    </div>
                 <div>
-                    <label for="User">Food:</label>
-                    <input type="text" food="Food" value="" />
+                    <label for="User">Drink name:</label>
+
+                    <select>
+                        <option value="1">@FoxClub.Models.SnacksAndTricks.Drink.Beer</option>
+                        <option value="2">@FoxClub.Models.SnacksAndTricks.Drink.HolyWater</option>
+                        <option value="3">@FoxClub.Models.SnacksAndTricks.Drink.Smoothie</option>
+                    </select>
                 </div>
-                <div>
-                    <label for="User">Drink:</label>
-                    <input type="text" drink="Drink" value="" />
-                </div>
-                <p>
-                    <input type="submit" value="Change Diet!" />
-                </p>
+                    <p>
+                        <input type="submit" value="Save new diet!" />
+                    </p>
             </fieldset>
         </form>
     </content>

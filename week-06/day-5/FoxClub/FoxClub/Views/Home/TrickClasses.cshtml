@@ -25,12 +25,14 @@
             He knows @Model.Tricks.ToString() trick.
             Wanna teach them more?
         </div>
-        <form method="post">
+        <form action=/information method="post">
             <fieldset>
                 <legend>Tricks to learn:</legend>
                 <div>
-                    <label for="User">Trick name:</label>
-                    <input type="text" tricks="Tricks" value="" />
+                    <label for="User" input="text" name="tricks">Trick name:</label>
+                    <select><option value="">@FoxClub.Models.SnacksAndTricks.Tricks.hangWithCass</option>
+                    <option value="">@FoxClub.Models.SnacksAndTricks.Tricks.huntGhosts</option>
+                    <option value="">@FoxClub.Models.SnacksAndTricks.Tricks.protectSammy</option></select>
                 </div>
                 <p>
                     <input type="submit" value="Learn!" />

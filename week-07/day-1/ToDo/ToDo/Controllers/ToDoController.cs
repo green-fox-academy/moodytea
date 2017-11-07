@@ -13,7 +13,7 @@ namespace ToDo.Controllers
     public class ToDoController : Controller
     {
         private ToDoContext toDoContext;
-        List<ToDo.Models.ToDoClass> list;
+        List<ToDoClass> list;
 
         public ToDoController(ToDoContext toDoContext)
         {
@@ -21,6 +21,7 @@ namespace ToDo.Controllers
             list = toDoContext.ToDos.ToList();
         }
 
+        [HttpGet]
         [Route("")]
         [Route("list")]
         public IActionResult Index()
@@ -28,9 +29,19 @@ namespace ToDo.Controllers
             return View(list);
         }
 
-        [Route("new")]
-        public IActionResult New()
+
+        //[HttpGet]
+        //[Route("adding")]
+        //public IActionResult Adding()
+        //{
+        //    return View(list);
+        //}
+
+        //[HttpPost]
+        [Route("adding")]
+        public IActionResult Adding(ToDoClass toDoClass)
         {
+            toDoContext.Adding(toDoClass);
             return View(list);
         }
     }

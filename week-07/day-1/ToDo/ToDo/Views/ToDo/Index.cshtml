@@ -1,33 +1,37 @@
 ﻿@model List<ToDo.Models.ToDoClass>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>SUPERSTAR TO DO LIST</title>
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
-</head>
-<nav><a href="/new">Add New ToDo</a></nav>
-<body>
-    <h1>ToDos For Today</h1>
+    <head>
+        <title>SUPERSTAR TO DO LIST</title>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
+    </head>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>ToDo</th>
-            <th>Done</th>
-            <th>Urgent</th>
-        </tr>
-        @foreach (var item in Model)
-        {
+
+    <body>
+        <h1>ToDos For Today</h1>
+
+        <table>
             <tr>
-            <td>@item.ID</td>
-            <td>@item.Title</td>
-            <td>@item.IsDone</td>
-            <td>@item.IsUrgent</td>
+                <th>ID</th>
+                <th>ToDo</th>
+                <th>Done</th>
+                <th>Urgent</th>
             </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                <td>@item.ID</td>
+                <td>@item.Title</td>
+                <td>@item.IsDone</td>
+                <td>@item.IsUrgent</td>
+                </tr>
 
-        }
+            }
         
-    </table>
-    
-</body>
+        </table>
+        <br />
+        <a href="todo/new"> Add &#65291 </a>
+        <a href="todo/Delete"> Delete &#9851 </a>
+        <a href="todo/Edit"> Edit &#128221 </a>
+    </body>
 </html>

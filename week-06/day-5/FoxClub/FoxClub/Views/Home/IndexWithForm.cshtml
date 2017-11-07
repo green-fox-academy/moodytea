@@ -1,0 +1,12 @@
+﻿@model FoxClub.Models.Fox
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Name)  @Html.TextBoxFor(m => m.Name)  @Html.ValidationMessageFor(m => m.Name);
+
+}
+
+@section Footer 
+{
+    made by Dorothy Katona
+}

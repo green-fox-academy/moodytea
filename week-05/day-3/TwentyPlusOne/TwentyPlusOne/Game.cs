@@ -84,11 +84,11 @@ namespace TwentyPlusOne
             if (playerCard.Rank == Card.RankList.Jack || playerCard.Rank == Card.RankList.King 
             | playerCard.Rank == Card.RankList.Queen)
             {
-                playerVal += valTen;
+                playerVal = playerVal + 10;
             }
             else if (playerCard.Rank == Card.RankList.Ace && playerVal > 10)
             {
-                playerVal += valOne;
+                playerVal = playerVal + 1;
             }
             else
             {

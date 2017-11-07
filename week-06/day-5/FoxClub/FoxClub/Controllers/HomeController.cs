@@ -27,8 +27,16 @@ namespace FoxClub.Controllers
         [Route("")]
         public IActionResult Post(string name)
         {
-            this.fox.Name = name;
-            return RedirectToAction("Information");
+            if (ModelState.IsValid)
+            {
+                this.fox.Name = name;
+                return RedirectToAction("Information");
+            }
+            else
+            {
+                return RedirectToAction("");
+            }
+            
         }
 
         [HttpGet]
@@ -49,6 +57,22 @@ namespace FoxClub.Controllers
         [Route("/information/trickclasses")]
         public IActionResult TrickClasses()
         {
+            return View(fox);
+        }
+
+        [HttpPost]
+        [Route("/information/trickclasses")]
+        public IActionResult Post(SnacksAndTricks.Tricks trick)
+        {
+            this.fox.Tricks = trick;
+            return RedirectToAction("Information");
+        }
+
+        [HttpPost]
+        [Route("/information")]
+        public IActionResult Information(SnacksAndTricks.Tricks trick)
+        {
+            this.fox.Tricks = trick;
             return View(fox);
         }
     }
