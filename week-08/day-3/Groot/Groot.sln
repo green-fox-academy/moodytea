@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Groot", "Groot\Groot.csproj", "{A201936C-8B0C-4107-95F1-EF3DD63F86B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Groot.IntegrrationTests", "Groot.IntegrrationTests\Groot.IntegrrationTests.csproj", "{6D2BADAA-AF12-4A9A-89A7-F7D320911F87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A201936C-8B0C-4107-95F1-EF3DD63F86B1} = {A201936C-8B0C-4107-95F1-EF3DD63F86B1}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A201936C-8B0C-4107-95F1-EF3DD63F86B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A201936C-8B0C-4107-95F1-EF3DD63F86B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A201936C-8B0C-4107-95F1-EF3DD63F86B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A201936C-8B0C-4107-95F1-EF3DD63F86B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2BADAA-AF12-4A9A-89A7-F7D320911F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2BADAA-AF12-4A9A-89A7-F7D320911F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2BADAA-AF12-4A9A-89A7-F7D320911F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2BADAA-AF12-4A9A-89A7-F7D320911F87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EE820E4-35EF-4600-B45B-C43563B393DA}
+	EndGlobalSection
+EndGlobal

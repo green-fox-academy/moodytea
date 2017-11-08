@@ -14,6 +14,7 @@ namespace WebApp.Controllers
     {
         UntilClass until = new UntilClass();
         JsonNumbers json = new JsonNumbers();
+        SithClass text = new SithClass();
 
         [Route("")]
         public IActionResult Index()
@@ -164,11 +165,25 @@ namespace WebApp.Controllers
         }
 
         //[HttpPost]
-        //[Route("/dountil/factor")]
+        //[Route("/log")]
         //public JsonResult Log(Log log)
         //{
 
         //}
+
+        [HttpPost]
+        [Route("/sith")]
+        public JsonResult Yodaizer(SithClass text)
+        {
+            if (text.Text != string.Empty)
+            {
+                return Json(new { sith_text = "Please provide what to do with the numbers!" });
+            }
+            else
+            {
+                return Json(new { error = "Feed me some text you have to, padawan young you are. Hmmm." });
+            }
+        }
 
     }
 }
