@@ -36,13 +36,13 @@ namespace Groot.IntegrrationTests.Scenarios.Rest
             var response = await Context.Client.GetAsync("/groot?input=hi");
             string responseJson = await response.Content.ReadAsStringAsync();
 
-            Assert.Equal("{\"recived\":\"hi\",\"translation:\"I am Groot!\"}", responseJson);
+            Assert.Equal("{\"recived\":\"hi\",\"translated:\"I am Groot!\"}", responseJson);
         }
 
         [Fact]
         public async Task IndexShouldReturnOkStatus()
         {
-            var response = await Context.Client.GetAsync("/groot");
+            var response = await Context.Client.GetAsync("/groot?input=hi");
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
