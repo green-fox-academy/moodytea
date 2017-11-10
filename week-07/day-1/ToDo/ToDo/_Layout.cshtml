@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#"><button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+    Home
+</button>
+</a></li>
+        <li role="presentation"><a href="#"><button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                                                Add &#65291
+</button>
+</a></li>
+        <li role="presentation"><a href="#"><button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                                                Delete &#9851
+</button></a></li>
+        <li role="presentation"><a href="#"><button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                                                Edit &#128221
+</button></a></li>
+    </ul>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

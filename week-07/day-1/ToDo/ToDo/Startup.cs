@@ -37,14 +37,16 @@ namespace ToDo
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole();
-            app.UseStaticFiles();
+            
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc();
+            app.UseStaticFiles();
+            app.UseDefaultFiles();
 
             app.Run(async (context) =>
             {

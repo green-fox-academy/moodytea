@@ -2,24 +2,30 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>SUPERSTAR TO DO LIST</title>
-        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />
+        <title>SUPERSTAR TO DO LIST</title><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/StyleSheet1.css" rel="stylesheet" />
+        @*<link rel="stylesheet" type="text/css" href="@Url.Content("~/Css/StyleSheet.css")" />*@
     </head>
 
 
     <body>
-        <h1>ToDos For Today</h1>
+        <h1 class="jumbotron">ToDos For Today   <span class="badge alert-danger">@Model.Count</span></h1class="jumbotron">
 
-        <table>
-            <tr>
+        <table class="table-striped" class="panel panel-default">
+            <tr class="list-group-item" class="panel panel-primary">
                 <th>ID</th>
                 <th>ToDo</th>
                 <th>Done</th>
                 <th>Urgent</th>
-            </tr>
+            </tr class="panel">
             @foreach (var item in Model)
             {
-                <tr>
+                <tr class="list-group-item" class="panel panel-default">
                 <td>@item.ID</td>
                 <td>@item.Title</td>
                 <td>@item.IsDone</td>
@@ -30,8 +36,30 @@
         
         </table>
         <br />
-        <a href="todo/new"> Add &#65291 </a>
-        <a href="todo/Delete"> Delete &#9851 </a>
-        <a href="todo/Edit"> Edit &#128221 </a>
+        <ul class="nav nav-pills">
+            <li role="presentation" @*class="active"*@>
+                <a class=" label bg-primary"href="#">
+                        Home  <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </li>
+            <li role="presentation">
+                <a class="label bg-primary" href="#">
+                        Add <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+            </li>
+            <li role="presentation">
+                
+                <a class="label label-danger" href="#">
+                    Delete<span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </li>
+            <li class="a" role="presentation">
+                <a  class="label label-success" href="#">
+                        Edit <span class="glyphicon glyphicon-tasks"></span>
+                </a>
+            </li>
+        </ul>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
