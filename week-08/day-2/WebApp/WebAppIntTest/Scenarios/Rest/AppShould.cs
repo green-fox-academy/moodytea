@@ -110,6 +110,52 @@ namespace WebAppIntTest.Scenarios.Rest
 
             Assert.Equal("{\"result\":120}", await response.Content.ReadAsStringAsync());
         }
+
+        [Fact]
+        public async Task DoUntilWithSumAndNumber()
+        {
+            var jsonObject = new UntilClass
+            {
+                Until = 5,
+            };
+
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/dountil/sum", content);
+
+            Assert.Equal("{\"result\":15}", await response.Content.ReadAsStringAsync());
+        }
+
+        [Fact]
+        public async Task DoUntilStatusWithoutNumber()
+        {
+            var jsonObject = new UntilClass { };
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/dountil/sum", content);
+
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task DoUntilWithoutNumber()
+        {
+            var jsonObject = new UntilClass
+            {
+                Until = 
+            };
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/dountil/sum", content);
+
+            Assert.Equal("{\"error\":\"Please provide a number!\"}", await response.Content.ReadAsStringAsync());
+        }
     }
 
     

@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
 
 
@@ -92,7 +96,7 @@ namespace WebApp.Controllers
                 {
                     do
                     {
-                        until2 *= (until.Until) - i;
+                        until2 *= ((int)until.Until) - i;
                         i++;
                     } while (i != until.Until);
                     return Json(new { result = until2 });
@@ -101,7 +105,7 @@ namespace WebApp.Controllers
                 {
                     do
                     {
-                        until2 += (until.Until) - i;
+                        until2 += ((int)until.Until) - i;
                         i++;
                     } while (i != until.Until);
                     return Json(new { result = until2 - 1 });
