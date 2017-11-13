@@ -142,12 +142,9 @@ namespace WebAppIntTest.Scenarios.Rest
         }
 
         [Fact]
-        public async Task DoUntilWithoutNumber()
+        public async Task DoUntilSumWithoutNumber()
         {
-            var jsonObject = new UntilClass
-            {
-                Until = 
-            };
+            var jsonObject = new UntilClass().Until;
             var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
             var content = new StringContent(convertedjsonObject.ToString(),
                          encoding: Encoding.UTF8,
@@ -155,6 +152,92 @@ namespace WebAppIntTest.Scenarios.Rest
             var response = await Context.Client.PostAsync("/dountil/sum", content);
 
             Assert.Equal("{\"error\":\"Please provide a number!\"}", await response.Content.ReadAsStringAsync());
+        }
+
+        [Fact]
+        public async Task DoUntilFactorialWithoutNumber()
+        {
+            var jsonObject = new UntilClass().Until;
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/dountil/factor", content);
+
+            Assert.Equal("{\"error\":\"Please provide a number!\"}", await response.Content.ReadAsStringAsync());
+        }
+
+
+        public int[] numbers = new int[] { 1, 2, 5, 10 };
+        [Fact]
+        public async Task ArraysWithoutWhat()
+        {
+
+            var jsonObject = new JsonNumbers
+            {
+                numbers = this.numbers,
+            };
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/arrays", content);
+
+            Assert.Equal("{\"error\":\"Please provide what to do with the numbers!\"}", await response.Content.ReadAsStringAsync());
+        }
+
+        [Fact]
+        public async Task ArraysSumWithArray()
+        {
+
+            var jsonObject = new JsonNumbers
+            {
+                numbers = this.numbers,
+                what = "sum"
+            };
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/arrays", content);
+
+            Assert.Equal("{\"result\":18}", await response.Content.ReadAsStringAsync());
+        }
+
+        [Fact]
+        public async Task ArraysDoubleWithArray()
+        {
+
+            var jsonObject = new JsonNumbers
+            {
+                numbers = this.numbers,
+                what = "double"
+            };
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/arrays", content);
+
+            Assert.Equal("{\"result\":[2,4,10,20]}", await response.Content.ReadAsStringAsync());
+        }
+
+        [Fact]
+        public async Task ArraysMultiplyWithArray()
+        {
+
+            var jsonObject = new JsonNumbers
+            {
+                numbers = this.numbers,
+                what = "multiply"
+            };
+            var convertedjsonObject = JsonConvert.SerializeObject(jsonObject);
+            var content = new StringContent(convertedjsonObject.ToString(),
+                         encoding: Encoding.UTF8,
+                         mediaType: "application/json");
+            var response = await Context.Client.PostAsync("/arrays", content);
+
+            Assert.Equal("{\"result\":100}", await response.Content.ReadAsStringAsync());
         }
     }
 

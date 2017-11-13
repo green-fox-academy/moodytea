@@ -7,7 +7,6 @@ namespace WebApp.Models
 {
     public class UntilClass
     {
-        public int? Until { get; set; }
-        //public string what { get; set; }
+        public int Until { get; set; }
     }
 }

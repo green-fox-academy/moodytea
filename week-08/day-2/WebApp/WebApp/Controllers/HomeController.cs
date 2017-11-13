@@ -96,7 +96,7 @@ namespace WebApp.Controllers
                 {
                     do
                     {
-                        until2 *= ((int)until.Until) - i;
+                        until2 *= (until.Until) - i;
                         i++;
                     } while (i != until.Until);
                     return Json(new { result = until2 });
@@ -105,7 +105,7 @@ namespace WebApp.Controllers
                 {
                     do
                     {
-                        until2 += ((int)until.Until) - i;
+                        until2 += (until.Until) - i;
                         i++;
                     } while (i != until.Until);
                     return Json(new { result = until2 - 1 });
@@ -138,7 +138,7 @@ namespace WebApp.Controllers
                     number += json.numbers[i];
                     i++;
                 } while (i != json.numbers.Length);
-                return Json(new { until = number-1 });
+                return Json(new { result = number-1 });
             }
             else if (json.what == "multiply")
             {
@@ -147,7 +147,7 @@ namespace WebApp.Controllers
                     number *= json.numbers[i];
                     i++;
                 } while (i != json.numbers.Length);
-                return Json(new { until = number });
+                return Json(new { result = number });
             }
             else if (json.what == "double")
             {
@@ -156,7 +156,7 @@ namespace WebApp.Controllers
                     number2[i] = json.numbers[i] * 2;
                     i++;
                 } while (i != json.numbers.Length);
-                return Json(new { until = number2 });
+                return Json(new { result = number2 });
             }
             else
             {

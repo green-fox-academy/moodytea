@@ -9,6 +9,5 @@ namespace WebApp.Models
     {
         public int[] numbers { get; set; }
         public string what { get; set; }
-        //public int Until { get; set; }
     }
 }
