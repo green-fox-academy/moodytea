@@ -13,53 +13,74 @@
     </head>
 
 
-    <body>
-        <h1 class="jumbotron">ToDos For Today   <span class="badge alert-danger">@Model.Count</span></h1class="jumbotron">
-
-        <table class="table-striped" class="panel panel-default">
-            <tr class="list-group-item" class="panel panel-primary">
-                <th>ID</th>
-                <th>ToDo</th>
-                <th>Done</th>
-                <th>Urgent</th>
-            </tr class="panel">
-            @foreach (var item in Model)
-            {
-                <tr class="list-group-item" class="panel panel-default">
-                <td>@item.ID</td>
-                <td>@item.Title</td>
-                <td>@item.IsDone</td>
-                <td>@item.IsUrgent</td>
+    <body style="background-color: rgb(179, 179, 255)">
+        <div class="panel panel-default">
+            <div style="background-color: rgb(179, 179, 255)">
+                ToDos For Today   <span class="badge alert-danger">@Model.Count</span>
+            </div>
+            <table  class="jumbotron, table table-striped, panel panel-default" style="background-image: url(https://i2.wp.com/www.iizziistudio.com/wp-content/uploads/2016/03/BG-Polka-Dots-A-1.jpg?resize=800%2C800)">
+                <tr class="panel panel-primary">
+                    <th>ID</th>
+                    <th>ToDo</th>
+                    <th>Done</th>
+                    <th>Urgent</th>
                 </tr>
+                @foreach (var item in Model)
+            {
+                    <tr class="panel panel-default">
+                        <td>@item.ID</td>
+                        <td>@item.Title</td>
+                        <td> 
+                        @if (item.IsDone)
+                        {  
+                            <span class="glyphicon glyphicon-ok" style="color: limegreen"> </span> ;
+                        }
+                        else
+                        { 
+                            <span class="glyphicon glyphicon-remove" style="color: crimson"></span>;
+                        }
+                        </td>
+                        <td>
+                        @if (@item.IsUrgent)
+                        {
+                            <span class="glyphicon glyphicon-ok" style="color: limegreen"></span> ;
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-remove" style="color: crimson"></span>;
+                        }</td>
+                    </tr>
 
-            }
-        
-        </table>
-        <br />
-        <ul class="nav nav-pills">
-            <li role="presentation" @*class="active"*@>
-                <a class=" label bg-primary"href="#">
+                }
+
+            </table>
+            </div>
+            <br />
+            <ul class="nav nav-pills">
+                <li role="presentation" @*class="active" *@>
+                    <a class=" label label-info" href="#">
                         Home  <span class="glyphicon glyphicon-home"></span>
-                </a>
-            </li>
-            <li role="presentation">
-                <a class="label bg-primary" href="#">
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a class="label label-info" href="#">
                         Add <span class="glyphicon glyphicon-pencil"></span>
-                </a>
-            </li>
-            <li role="presentation">
-                
-                <a class="label label-danger" href="#">
-                    Delete<span class="glyphicon glyphicon-trash"></span>
-                </a>
-            </li>
-            <li class="a" role="presentation">
-                <a  class="label label-success" href="#">
+                    </a>
+                </li>
+                <li class="a" role="presentation">
+                    <a class="label label-info" href="#">
                         Edit <span class="glyphicon glyphicon-tasks"></span>
-                </a>
-            </li>
-        </ul>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    </body>
+                    </a>
+                </li>
+                <li role="presentation">
+
+                    <a class="label label-danger" href="#">
+                        Delete<span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </li>
+                
+            </ul>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
 </html>
