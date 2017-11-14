@@ -22,8 +22,27 @@ namespace TripsOfDrWho.Controllers
         [Route("trips")]
         public IActionResult Index()
         {
+
             return View();
         }
 
+        [HttpGet]
+        [Route("new")]
+        public IActionResult New()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("new")]
+        public IActionResult New(Trips trip)
+        {
+            string name = trip.Name;
+            bool isGood = trip.IsGood;
+            double miles = trip.Miles;
+
+            trips.Add(new Trips(name, isGood, miles));
+            return RedirectToAction("Index");
+        }
     }
 }
