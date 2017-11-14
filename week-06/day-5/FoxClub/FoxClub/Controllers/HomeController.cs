@@ -53,6 +53,15 @@ namespace FoxClub.Controllers
             return View(fox);
         }
 
+        [HttpPost]
+        [Route("/information/nutritionstore")]
+        public IActionResult NutritionStore(SnacksAndTricks.Drink drink, SnacksAndTricks.Food food)
+        {
+            this.fox.Drink = drink;
+            this.fox.Food = food;
+            return RedirectToAction("Information");
+        }
+
         [HttpGet]
         [Route("/information/trickclasses")]
         public IActionResult TrickClasses()
@@ -62,18 +71,11 @@ namespace FoxClub.Controllers
 
         [HttpPost]
         [Route("/information/trickclasses")]
-        public IActionResult Post(SnacksAndTricks.Tricks trick)
+        public IActionResult TrickClasses(SnacksAndTricks.Tricks tricks)
         {
-            this.fox.Tricks = trick;
+            this.fox.Tricks = tricks;
             return RedirectToAction("Information");
         }
 
-        [HttpPost]
-        [Route("/information")]
-        public IActionResult Information(SnacksAndTricks.Tricks trick)
-        {
-            this.fox.Tricks = trick;
-            return View(fox);
-        }
     }
 }

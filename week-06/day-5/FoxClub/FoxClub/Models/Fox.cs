@@ -20,5 +20,13 @@ namespace FoxClub.Models
         public Fox()
         {
         }
+
+        public Fox(string name, SnacksAndTricks.Drink drink, SnacksAndTricks.Food food, SnacksAndTricks.Tricks tricks)
+        {
+            this.Name = name;
+            this.Drink = drink;
+            this.Food = food;
+            this.Tricks = tricks;
+        }
     }
 }

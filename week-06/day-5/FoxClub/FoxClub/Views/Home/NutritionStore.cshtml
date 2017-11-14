@@ -25,25 +25,25 @@
             Currently living on @Model.Food.ToString() and @Model.Drink.ToString().
             Wanna change this diet?
         </div>
-        <form method="post">
+        <form action="/information/nutritionstore" method="post">
             <fieldset>
                 <legend>New diet input:</legend>
                     <div>
                         <label for="User">Food name:</label>
 
-                        <select>
-                            <option value="1">@FoxClub.Models.SnacksAndTricks.Food.Burger</option>
-                            <option value="2">@FoxClub.Models.SnacksAndTricks.Food.Pie</option>
-                            <option value="3">@FoxClub.Models.SnacksAndTricks.Food.Salad</option>
+                        <select name="Food">
+                            <option>@FoxClub.Models.SnacksAndTricks.Food.Burger</option>
+                            <option>@FoxClub.Models.SnacksAndTricks.Food.Pie</option>
+                            <option>@FoxClub.Models.SnacksAndTricks.Food.Salad</option>
                         </select>
                     </div>
                 <div>
                     <label for="User">Drink name:</label>
 
-                    <select>
-                        <option value="1">@FoxClub.Models.SnacksAndTricks.Drink.Beer</option>
-                        <option value="2">@FoxClub.Models.SnacksAndTricks.Drink.HolyWater</option>
-                        <option value="3">@FoxClub.Models.SnacksAndTricks.Drink.Smoothie</option>
+                    <select name="Drink">
+                        <option>@FoxClub.Models.SnacksAndTricks.Drink.Beer</option>
+                        <option>@FoxClub.Models.SnacksAndTricks.Drink.HolyWater</option>
+                        <option>@FoxClub.Models.SnacksAndTricks.Drink.Smoothie</option>
                     </select>
                 </div>
                     <p>
