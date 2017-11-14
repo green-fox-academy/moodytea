@@ -1,10 +1,21 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model WebAnagram.Models.Anagram
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Anagram checker</title>
 </head>
 <body>
-    <form>
+        <h3>Welcome to the anagram checker!</h3>
+        <h3>All you have to do, is enter two values and the program will diplay if they are anagrams like this:</h3>
+        @if (@Model.Are)
+        {
+             <h3>"So turns out they are!"</h3> 
+        }
+        else
+        {
+            <h3>"They aren't!"</h3>
 
-    </form>
+        }
+        <a href="/check">Click here to try!</a>
 </body>
 </html>

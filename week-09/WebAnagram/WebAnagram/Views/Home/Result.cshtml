@@ -1,0 +1,19 @@
+﻿@model WebAnagram.Models.Anagram
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Anagram checker</title>
+</head>
+<body>
+        @if (@Model.Are)
+        {
+            <h3>"So turns out they are!"</h3>
+        }
+        else
+        {
+            <h3>"They aren't!"</h3>
+
+        }
+        <a href="/check">Wanna try again?</a>
+</body>
+</html>
