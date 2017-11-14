@@ -24,7 +24,6 @@ namespace WebAnagram.Models
             Array.Sort(a2);
             s2 = new string(a2);
 
-
             if (!s1.Equals(s2))
             {
                 Are = false;

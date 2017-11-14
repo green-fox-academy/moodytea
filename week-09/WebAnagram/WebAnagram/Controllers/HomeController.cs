@@ -36,6 +36,8 @@ namespace WebAnagram.Controllers
         [Route("/check")]
         public IActionResult Check(string one, string two)
         {
+            one = one.Replace(" ", String.Empty);
+            two = two.Replace(" ", String.Empty);
             anagram.AreThey(one, two);
             return RedirectToAction("Result");
         }
