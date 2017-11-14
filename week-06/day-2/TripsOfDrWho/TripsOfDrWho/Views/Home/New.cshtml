@@ -5,14 +5,18 @@
     <title>New Doctor Character</title>
 </head>
 <body>
-    <form action="/action_page.php" method="post">
-        Name <br/>
-        <input type="text" name="Name"><br>
-        Miles <br/>
-        <input type="text" name="Miles" /><br>
-        <input type="checkbox" name="IsGood" />Is a good character<br />
-
-        <input type="submit" value="Submit">
+    <form action="/new" method="post">
+        <fieldset>
+            <label>Create new character:</label><br /><br />
+            Name <br />
+            <input type="text" name="Name"><br />
+            Miles <br />
+            <input type="text" name="Miles" /><br />
+            <br />
+            <input type="checkbox" name="IsGood" />Is a good character<br />
+            <br />
+            <input type="submit" value="Submit">
+        </fieldset>
     </form>
 </body>
 </html>
