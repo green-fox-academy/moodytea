@@ -1,9 +1,11 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model List<ToDo.Models.ToDoClass>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title></title>
+        <title>Add ToDo</title>
     </head>
     <body>
-        <form method="post">
+        <form action="/todo" method="post">
             <fieldset>
                 <legend>New ToDo input:</legend>
                 <div>
@@ -13,10 +15,12 @@
                     <label for="User">ToDo:</label>
                     <input type="text" toDo="ToDo" value="" />
                 </div>
+                <br />
                 <div>
-                    <input type="radio" />
+                    <input type="checkbox" />
                     <label for="User">Is Urgent?</label>
-                    <input type="text" urgent="Urgent" value="" />
+                    <input type="checkbox" />
+                    <label for="User">Is It Done?</label>
                 </div>
                 <p>
                     <input type="submit" value="Create New!" />
