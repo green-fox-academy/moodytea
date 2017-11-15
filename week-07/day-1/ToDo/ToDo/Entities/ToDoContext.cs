@@ -22,6 +22,24 @@ namespace ToDo.Entities
             this.SaveChanges();
         }
 
+        public void UpVoting(int ID)
+        {
+            ToDos.Find(ID).Votes++;
+            this.SaveChanges();
+        }
+
+        public void DownVoting(int ID)
+        {
+            ToDos.Find(ID).Votes--;
+            this.SaveChanges();
+        }
+
+        //public void Sort()
+        //{
+        //    ToDos = ToDos.OrderBy(todo => todo.Votes);
+        //    this.SaveChanges();
+        //}
+
         public void Deleting(ToDoClass toDoClass)
         {
             ToDos.Remove(toDoClass);

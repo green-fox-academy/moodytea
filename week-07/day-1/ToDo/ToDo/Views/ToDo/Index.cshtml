@@ -21,16 +21,16 @@
             
                 <table class="jumbotron, table table-striped, panel panel-default" style="background-image: url(https://i2.wp.com/www.iizziistudio.com/wp-content/uploads/2016/03/BG-Polka-Dots-A-1.jpg?resize=800%2C800)">
                     <tr class="panel panel-primary">
-                        <th>ID</th>
                         <th>ToDo</th>
                         <th>Done</th>
                         <th>Urgent</th>
-                        <th>Delete</th>
+                        <th>Vote Up</th>
+                        <th>Vote Down</th>
+                        <th>Delete</th> 
                     </tr>
                     @foreach (var item in Model)
             {
                         <tr class="panel panel-default">
-                            <td>@item.ID</td>
                             <td>@item.Title</td>
                             <td>
                                 @if (item.IsDone)
@@ -51,6 +51,18 @@
                                 {
                                     <span class="glyphicon glyphicon-remove" style="color: crimson"></span>;
                                 }
+                            </td>
+                            <td>
+                                <form action="/todo/upvote" method="post">
+                                    <input type="hidden" name="ID" value="@item.ID" />
+                                    <button type="submit" class="label label-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                                </form>
+                            </td>
+                            <td>
+                            <form action="/todo/downvote" method="post">
+                                <input type="hidden" name="ID" value="@item.ID" />
+                                <button type="submit" class="label label-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                            </form>
                             </td>
                             <td>
                                 <form action="/todo/delete" method="post">

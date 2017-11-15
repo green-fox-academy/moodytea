@@ -26,7 +26,7 @@ namespace ToDo.Controllers
         [Route("list")]
         public IActionResult Index()
         {
-            return View(list);
+            return View(list.OrderByDescending(i => i.Votes).ToList());
         }
 
 
@@ -54,6 +54,21 @@ namespace ToDo.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [Route("upvote")]
+        public IActionResult UpVote(int ID)
+        {
+            toDoContext.UpVoting(ID);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [Route("downvote")]
+        public IActionResult DownVote(int ID)
+        {
+            toDoContext.DownVoting(ID);
+            return RedirectToAction("Index");
+        }
 
         [HttpGet]
         [Route("edit")]
