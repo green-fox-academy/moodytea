@@ -30,19 +30,44 @@ namespace ToDo.Controllers
         }
 
 
-        //[HttpGet]
-        //[Route("adding")]
-        //public IActionResult Adding()
-        //{
-        //    return View(list);
-        //}
+        [HttpGet]
+        [Route("adding")]
+        public IActionResult Adding()
+        {
+            return View(list);
+        }
 
-        //[HttpPost]
+        [HttpPost]
         [Route("adding")]
         public IActionResult Adding(ToDoClass toDoClass)
         {
             toDoContext.Adding(toDoClass);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [Route("delete")]
+        public IActionResult Delete(int ID)
+        {
+            ToDoClass toDoClass = toDoContext.ToDos.Find(ID);
+            toDoContext.Deleting(toDoClass);
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+        [Route("edit")]
+        public IActionResult Edit()
+        {
             return View(list);
+        }
+
+        [HttpPost]
+        [Route("edit")]
+        public IActionResult Edit(ToDoClass toDoClass)
+        {
+            toDoContext.Deleting(toDoClass);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -5,22 +5,22 @@
         <title>Add ToDo</title>
     </head>
     <body>
-        <form action="/todo" method="post">
+        <form action="/todo/adding" method="post">
             <fieldset>
                 <legend>New ToDo input:</legend>
                 <div>
-                    <input type="hidden" id="ID" value="" />
+                    <input name="ID" type="hidden" id="ID" value="" />
                 </div>
                 <div>
                     <label for="User">ToDo:</label>
-                    <input type="text" toDo="ToDo" value="" />
+                    <input name="Title" type="text" toDo="ToDo" value="" />
                 </div>
                 <br />
                 <div>
-                    <input type="checkbox" />
-                    <label for="User">Is Urgent?</label>
-                    <input type="checkbox" />
-                    <label for="User">Is It Done?</label>
+                    <input name="IsUrgent" type="checkbox" />
+                    Is Urgent?
+                    <input name="IsDone" type="checkbox" />
+                    Is It Done?
                 </div>
                 <p>
                     <input type="submit" value="Create New!" />

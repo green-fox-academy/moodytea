@@ -18,42 +18,51 @@
             <div style="background-color: rgb(179, 179, 255)">
                 ToDos For Today   <span class="badge alert-danger">@Model.Count</span>
             </div>
-            <table  class="jumbotron, table table-striped, panel panel-default" style="background-image: url(https://i2.wp.com/www.iizziistudio.com/wp-content/uploads/2016/03/BG-Polka-Dots-A-1.jpg?resize=800%2C800)">
-                <tr class="panel panel-primary">
-                    <th>ID</th>
-                    <th>ToDo</th>
-                    <th>Done</th>
-                    <th>Urgent</th>
-                </tr>
-                @foreach (var item in Model)
-            {
-                    <tr class="panel panel-default">
-                        <td>@item.ID</td>
-                        <td>@item.Title</td>
-                        <td> 
-                        @if (item.IsDone)
-                        {  
-                            <span class="glyphicon glyphicon-ok" style="color: limegreen"> </span> ;
-                        }
-                        else
-                        { 
-                            <span class="glyphicon glyphicon-remove" style="color: crimson"></span>;
-                        }
-                        </td>
-                        <td>
-                        @if (@item.IsUrgent)
-                        {
-                            <span class="glyphicon glyphicon-ok" style="color: limegreen"></span> ;
-                        }
-                        else
-                        {
-                            <span class="glyphicon glyphicon-remove" style="color: crimson"></span>;
-                        }</td>
+            
+                <table class="jumbotron, table table-striped, panel panel-default" style="background-image: url(https://i2.wp.com/www.iizziistudio.com/wp-content/uploads/2016/03/BG-Polka-Dots-A-1.jpg?resize=800%2C800)">
+                    <tr class="panel panel-primary">
+                        <th>ID</th>
+                        <th>ToDo</th>
+                        <th>Done</th>
+                        <th>Urgent</th>
+                        <th>Delete</th>
                     </tr>
+                    @foreach (var item in Model)
+            {
+                        <tr class="panel panel-default">
+                            <td>@item.ID</td>
+                            <td>@item.Title</td>
+                            <td>
+                                @if (item.IsDone)
+                                {
+                                    <span class="glyphicon glyphicon-ok" style="color: limegreen"> </span> ;
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-remove" style="color: crimson"></span>;
+                                }
+                            </td>
+                            <td>
+                                @if (@item.IsUrgent)
+                                {
+                                    <span class="glyphicon glyphicon-ok" style="color: limegreen"></span> ;
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-remove" style="color: crimson"></span>;
+                                }
+                            </td>
+                            <td>
+                                <form action="/todo/delete" method="post">
+                                    <input type="hidden" name="ID" value="@item.ID"/>
+                                    <button type="submit" class="label label-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                                </form>
+                            </td>
+                        </tr>
 
-                }
+                    }
 
-            </table>
+                </table>
             </div>
             <br />
             <ul class="nav nav-pills">
@@ -72,12 +81,7 @@
                         Edit <span class="glyphicon glyphicon-tasks"></span>
                     </a>
                 </li>
-                <li role="presentation">
-
-                    <a class="label label-danger" href="~/todo/delete">
-                        Delete<span class="glyphicon glyphicon-trash"></span>
-                    </a>
-                </li>
+               
                 
             </ul>
             <script src="~/lib/jquery/dist/jquery.min.js"></script>
