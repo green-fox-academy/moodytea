@@ -13,17 +13,17 @@ namespace Groot.Controllers
     {
         GrootClass input = new GrootClass();
 
-        [HttpGet]
         [Route("/groot")]
-        public IActionResult Index(GrootClass input)
+        public IActionResult Index(string input)
         {
-            if (input == null)
+            if (input != null)
             {
-                return StatusCode(400, new JsonResult(new { error = "I am Groot!" }));
+                return StatusCode(200, new JsonResult(new { received = input, translated = "I am Groot!" }));
             }
             else
             {
-                return new JsonResult(new { received = input, translated = "I am Groot!" });
+                return StatusCode(404, new JsonResult(new { error = "I am Groot!" }));
+                
             }
         }
     }

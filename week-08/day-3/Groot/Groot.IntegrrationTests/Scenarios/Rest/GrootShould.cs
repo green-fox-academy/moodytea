@@ -27,7 +27,7 @@ namespace Groot.IntegrrationTests.Scenarios.Rest
             var response = await Context.Client.GetAsync("/groot");
             string responseJson = await response.Content.ReadAsStringAsync();
 
-            Assert.Equal("{\"error\":\"I am Groot!\"}", responseJson);
+            Assert.Contains("{\"error\":\"I am Groot!\"}", responseJson);
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace Groot.IntegrrationTests.Scenarios.Rest
             var response = await Context.Client.GetAsync("/groot?input=hi");
             string responseJson = await response.Content.ReadAsStringAsync();
 
-            Assert.Equal("{\"recived\":\"hi\",\"translated:\"I am Groot!\"}", responseJson);
+            Assert.Contains("{\"received\":\"hi\",\"translated\":\"I am Groot!\"}", responseJson);
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace Groot.IntegrrationTests.Scenarios.Rest
         {
             var response = await Context.Client.GetAsync("/groot");
 
-            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 }

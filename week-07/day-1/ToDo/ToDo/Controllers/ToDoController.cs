@@ -70,18 +70,21 @@ namespace ToDo.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        [Route("edit")]
-        public IActionResult Edit()
+        [HttpPost]
+        [Route("select")]
+        public IActionResult Select(int ID)
         {
-            return View(list);
+            ToDoClass toDoClass = toDoContext.ToDos.Find(ID);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         [Route("edit")]
         public IActionResult Edit(ToDoClass toDoClass)
         {
+            //ToDoClass toDoClass2 = toDoClass;
             toDoContext.Deleting(toDoClass);
+            toDoContext.Adding(toDoClass);
             return RedirectToAction("Index");
         }
     }
