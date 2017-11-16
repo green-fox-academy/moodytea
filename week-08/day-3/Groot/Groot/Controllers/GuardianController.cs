@@ -14,7 +14,7 @@ namespace Groot.Controllers
         GrootClass input = new GrootClass();
 
         [Route("/groot")]
-        public IActionResult Index(string input)
+        public IActionResult Index([FromQuery]string input)
         {
             if (input != null)
             {
