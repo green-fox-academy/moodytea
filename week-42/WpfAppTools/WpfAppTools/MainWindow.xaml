@@ -1,0 +1,90 @@
+﻿<Window x:Class="WpfAppTools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppTools"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Background="PaleTurquoise">
+    <Border Padding="10">
+        <StackPanel >
+            <Menu>
+                <MenuItem Header="_File">
+                    <MenuItem x:Name="menuOpen" Header="_Open" Command="ApplicationCommands.Open" InputGestureText="Ctrl+O" Click="OpenButton_Click">
+                        <MenuItem.Icon>
+                            <Image Source="./Resources/open.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="menuSave" Header="_Save" InputGestureText="Ctrl+S" Click="SaveButton_Click">
+                        <MenuItem.Icon>
+                            <Image Source="./Resources/save.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="menuQuit" Header="_Quit" InputGestureText="Ctrl+Q" Click="QuitButton_Click">
+                        <MenuItem.Icon>
+                            <Image Source="./Resources/exit.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem>
+                        <MenuItem Header="_Copy" x:Name="menuCopy" InputGestureText="Ctrl+C">
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <ToolBarTray DockPanel.Dock ="Top" />
+            <ToolBar>
+                <Button x:Name="tbOpen" ToolTip="Open File" Click="OpenButton_Click">
+                    <Image Source="./Resources/open.png" Height="30px" Width="30px"/>
+                </Button>
+            </ToolBar>
+
+            <TextBlock Text="Welcoming lines here..." x:Name="WelcomingText"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="GitHubName" Margin="0 10 0 0" />
+                        <TextBox x:Name="GitHubName" Background="Gray" Margin="0 0 10 0" Padding="2"/>
+                    </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Password" Margin="0 10 0 0" />
+                    <TextBox Background="Gray" Padding="2"/>
+                </StackPanel>
+            </Grid>
+            <TextBlock Margin="0 10 0 0" Text="Choose your class"/>
+            <ComboBox x:Name="ComboYear" SelectedIndex="0" Padding="2" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="C#"/>
+                <ComboBoxItem Content="Java"/>
+                <ComboBoxItem Content="JavaScript"/>
+                <ComboBoxItem Content="Hardver"/>
+            </ComboBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="0 10 0 0">
+                    <CheckBox Checked="CheckBox_Checked" x:Name="RememberCheckBox" Content="Remember Me"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="0 10 0 0">
+                    <CheckBox Checked="CheckBox_Checked" x:Name="TermsCheckBox" Content="I have read the Conditions and Terms"/>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SubmitButton" Click="SubmitButton_Click" Margin="0 0 10 0" Grid.Column="0" Content="Submit"/>
+                <Button x:Name="OpenButton" Click="OpenButton_Click"  Grid.Column="1" Content="OpenFile"/>
+                <Button x:Name="SaveButton" Click="SaveButton_Click" Margin="10 0 0 0" Grid.Column="3" Content="SaveFile"/>
+                <Button x:Name="QuitButton" Click="QuitButton_Click" Margin="10 0 0 0" Grid.Column="2" Content="Quit"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
