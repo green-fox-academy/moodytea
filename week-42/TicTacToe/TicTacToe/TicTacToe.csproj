@@ -68,9 +68,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AIPlayer.cs" />
     <Compile Include="Model\GameEngine.cs" />
     <Compile Include="Model\GameManager.cs" />
     <Compile Include="Model\GameVisualizer.cs" />
+    <Compile Include="Model\IPlayer.cs" />
+    <Compile Include="Model\Main.cs" />
+    <Compile Include="Model\RealPlayer.cs" />
     <Compile Include="Model\TicTacToeClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe.Model
+namespace Tic
 {
     class GameManager
     {
@@ -52,6 +52,5 @@ namespace TicTacToe.Model
 
             Console.WriteLine($"The winner is: {0}", Winner);
         }
-
     }
 }
