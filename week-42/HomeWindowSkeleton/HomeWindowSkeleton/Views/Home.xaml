@@ -19,7 +19,7 @@
                 </Grid.ColumnDefinitions>
                 <ComboBox Margin="0 0 10 0"  Grid.Column="0" IsEditable="True" Text="{Binding ClassName}" FontWeight="Bold" Foreground="DarkSlateGray" >
                 </ComboBox>
-                <Button  Grid.Column="1" x:Name="NextButton" Content="Next >" Background="#303030" Foreground="White"/> <!--Click="NextButton_Click"--> 
+                <Button  Grid.Column="1" x:Name="NextButton" Content="Next >" Background="#303030" Foreground="White" Click="NextButton_Click"/>
             </Grid>
         </StackPanel>
     </Border>

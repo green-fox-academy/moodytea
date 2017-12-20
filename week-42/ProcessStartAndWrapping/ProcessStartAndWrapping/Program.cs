@@ -18,9 +18,12 @@ namespace ProcessStartAndWrapping
             Process proStart = new Process();
             proStart.StartInfo = pro;
             proStart.Start();
-            string output = proStart.StandardOutput.ReadToEnd();
-            MessageBox.Show(output);
             proStart.WaitForExit();
         }
+
+        //static void StartProcess()
+        //{
+
+        //}
     }
 }
