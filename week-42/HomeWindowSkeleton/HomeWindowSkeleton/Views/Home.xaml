@@ -10,7 +10,7 @@
     <Border Padding="10">
         <StackPanel>
             <Image Source="./green_fox_logo.png"/>
-            <TextBlock/>
+            <TextBlock Text="" x:Name="txtMessage"/>
             <TextBlock Text="Welcome to the Green Fox Academy Toolchain Downloader!" TextAlignment="Center" x:Name="WelcomingText"/>
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
