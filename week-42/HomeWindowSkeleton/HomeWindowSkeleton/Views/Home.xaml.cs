@@ -40,8 +40,7 @@ namespace HomeWindowSkeleton
 
             Start();
             ChangeWorkingDirectory();
-            SendDataToCommandLine();
-            ExitCommandLine();
+            SendCommandToCommandLine();
 
         }
 
@@ -50,19 +49,15 @@ namespace HomeWindowSkeleton
             process = Process.Start(processInfo);
         }
 
-        private void GetDataFromCommandLine()
+        private void SendCommandToCommandLine()
         {
-            string s = process.StandardOutput.ReadToEnd();
-            process.Kill();
-            MessageBox.Show(s);
-        }
-
-        private void SendDataToCommandLine()
-        {
+            
             string command = "echo hello";
             process.StandardInput.WriteLine(command);
-            GetDataFromCommandLine();
-            
+            //process.StandardInput.WriteLine("exit");
+            //string s = process.StandardOutput.ReadToEnd();
+            ExitCommandLine();
+            //MessageBox.Show(s);
         }
 
         private void ChangeWorkingDirectory()
@@ -74,8 +69,8 @@ namespace HomeWindowSkeleton
 
         private void ExitCommandLine()
         {
-            process.StandardInput.WriteLine("exit");
-            //process.Kill();
+            //process.StandardInput.WriteLine("exit");
+            process.Kill();
         }
 
         //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
