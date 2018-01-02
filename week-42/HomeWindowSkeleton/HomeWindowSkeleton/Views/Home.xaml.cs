@@ -16,26 +16,66 @@ namespace HomeWindowSkeleton
     /// </summary>
     public partial class Home : Window
     {
+        public ProcessStartInfo processInfo = new ProcessStartInfo("cmd")
+        {
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            RedirectStandardInput = true,
+            //WorkingDirectory = @"C:\Users\"
+        };
+
+        private Process process;
+
         public Home()
         {
             InitializeComponent();
             //DataContext = new ClassNameViewModel();
         }
 
-        
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            ProcessStartInfo pro = new ProcessStartInfo("cmd");
-            //pro.WorkingDirectory = @"C:\";
-            pro.UseShellExecute = false;
-            //pro.CreateNoWindow = true;
-            pro.RedirectStandardOutput = true;
-            pro.RedirectStandardInput = true;
-            var proc = Process.Start(pro);
-            proc.StandardInput.WriteLine("echo hello");
-            proc.StandardInput.WriteLine("exit");
-            string s = proc.StandardOutput.ReadToEnd();
+
+            //process.StandardInput.WriteLine("echo hello");
+            //process.StandardInput.WriteLine("exit");
+
+            Start();
+            ChangeWorkingDirectory();
+            SendDataToCommandLine();
+            ExitCommandLine();
+
+        }
+
+        public void Start()
+        {
+            process = Process.Start(processInfo);
+        }
+
+        private void GetDataFromCommandLine()
+        {
+            string s = process.StandardOutput.ReadToEnd();
+            process.Kill();
             MessageBox.Show(s);
+        }
+
+        private void SendDataToCommandLine()
+        {
+            string command = "echo hello";
+            process.StandardInput.WriteLine(command);
+            GetDataFromCommandLine();
+            
+        }
+
+        private void ChangeWorkingDirectory()
+        {
+            process.Kill();
+            processInfo.WorkingDirectory = @"C:\Users\";
+            process = Process.Start(processInfo);
+        }
+
+        private void ExitCommandLine()
+        {
+            process.StandardInput.WriteLine("exit");
+            //process.Kill();
         }
 
         //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,6 +83,9 @@ namespace HomeWindowSkeleton
         //    string className = ComboYear.SelectedItem.ToString();
         //    className = className.Substring(38);
         //    MessageBox.Show(className);
+
+
+        ////////////////////////process data here///////////// pro.CreateNoWindow = true;
         //}
     }
 }
