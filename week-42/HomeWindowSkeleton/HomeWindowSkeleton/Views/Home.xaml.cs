@@ -1,13 +1,5 @@
-﻿using HomeWindowSkeleton.Models;
-using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
+﻿using System.Windows;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWindowSkeleton
 {
@@ -16,15 +8,17 @@ namespace HomeWindowSkeleton
     /// </summary>
     public partial class Home : Window
     {
-        public ProcessStartInfo processInfo = new ProcessStartInfo("cmd")
+        private ProcessStartInfo processInfo = new ProcessStartInfo("cmd")
         {
             UseShellExecute = false,
             RedirectStandardOutput = true,
             RedirectStandardInput = true,
-            //WorkingDirectory = @"C:\Users\"
+            WorkingDirectory = @"C:\Users\"
         };
 
         private Process process;
+
+        private string route = @"C:\";
 
         public Home()
         {
@@ -44,7 +38,7 @@ namespace HomeWindowSkeleton
 
         }
 
-        public void Start()
+        private void Start()
         {
             process = Process.Start(processInfo);
         }
@@ -54,16 +48,17 @@ namespace HomeWindowSkeleton
             
             string command = "echo hello";
             process.StandardInput.WriteLine(command);
-            //process.StandardInput.WriteLine("exit");
-            //string s = process.StandardOutput.ReadToEnd();
-            ExitCommandLine();
-            //MessageBox.Show(s);
+            process.StandardInput.WriteLine("exit");
+            string s = process.StandardOutput.ReadToEnd();
+
+            //ExitCommandLine();
+            MessageBox.Show(s.Substring(78));
         }
 
         private void ChangeWorkingDirectory()
         {
-            process.Kill();
-            processInfo.WorkingDirectory = @"C:\Users\";
+            ExitCommandLine();
+            processInfo.WorkingDirectory = route;
             process = Process.Start(processInfo);
         }
 

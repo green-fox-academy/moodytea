@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="C:\Users\doa\moodytea\week-42\StringDivider.cs" Link="StringDivider.cs" />
+  </ItemGroup>
+
 </Project>
