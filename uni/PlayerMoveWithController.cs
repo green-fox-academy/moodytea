@@ -18,7 +18,7 @@ public class PlayerMoveWithController : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Joystick1Button0))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button0))
         {
             rigidBody2.AddForce(0, 100, 0);
         }
